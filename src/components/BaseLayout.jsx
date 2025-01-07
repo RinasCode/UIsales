@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./Sidebar"; // Pastikan Sidebar ada di folder components
+import Sidebar from "./Sidebar"; 
 
 const BaseLayout = ({ children }) => {
   return (

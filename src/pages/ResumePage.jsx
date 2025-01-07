@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BaseLayout from "../components/BaseLayout";
 
 function ResumePage() {
-  const [isOpen, setIsOpen] = useState(false); // State untuk sidebar
+  const [isOpen, setIsOpen] = useState(false); 
 
   const data = [
     ["AHLSTROM", "13.696.500", "5.428.125.504", "5.441.822.004"],

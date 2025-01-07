@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function StockGdmUpdate() {
-  const [searchDesc, setSearchDesc] = useState(""); // State untuk pencarian DESC
-  const [startDate, setStartDate] = useState(""); // State untuk tanggal awal
-  const [endDate, setEndDate] = useState(""); // State untuk tanggal akhir
+  const [searchDesc, setSearchDesc] = useState(""); 
+  const [startDate, setStartDate] = useState(""); 
+  const [endDate, setEndDate] = useState(""); 
 
   const handleSearchDesc = (e) => {
     setSearchDesc(e.target.value);
@@ -270,8 +270,7 @@ function StockGdmUpdate() {
                 ed_kurang_satu_val: "1.265.000",
                 ed_lebih_satu_val: "1.265.000",
                 total_stock_val: "1.265.000",
-              },
-              // Add more rows here
+              }
             ]
               .filter((item) => filterByDesc(item.desc))
               .map((item, index) => (

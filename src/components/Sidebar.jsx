@@ -3,29 +3,29 @@ import logo from "../assets/logo.png";
 import user from "../assets/user.png";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false); // State untuk toggle sidebar
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State untuk toggle dropdown menu Dashboard
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false); // State untuk toggle user menu
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false); 
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen); // Toggle sidebar state
+    setIsOpen(!isOpen); 
   };
 
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown state
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const toggleUserMenu = () => {
-    setIsUserMenuOpen(!isUserMenuOpen); // Toggle user menu state
+    setIsUserMenuOpen(!isUserMenuOpen); 
   };
 
   const handleLogout = () => {
-    alert("Logout berhasil!"); // Ganti dengan logika logout-mu
-    window.location.href = "/"; // Redirect setelah logout
+    alert("Logout berhasil!"); 
+    window.location.href = "/"; 
   };
 
   const handleLinkClick = () => {
-    setIsOpen(false); // Menutup sidebar ketika menu diklik
+    setIsOpen(false); 
   };
 
   return (
@@ -90,7 +90,7 @@ const Sidebar = () => {
           <li>
             <a
               href="/sales"
-              onClick={handleLinkClick} // Menutup sidebar ketika diklik
+              onClick={handleLinkClick} 
               className="block p-2 rounded hover:bg-gray-700"
             >
               Sales
@@ -99,7 +99,7 @@ const Sidebar = () => {
           <li>
             <a
               href="/sku"
-              onClick={handleLinkClick} // Menutup sidebar ketika diklik
+              onClick={handleLinkClick}
               className="block p-2 rounded hover:bg-gray-700"
             >
               SKU
@@ -108,7 +108,7 @@ const Sidebar = () => {
           <li>
             <a
               href="/settings"
-              onClick={handleLinkClick} // Menutup sidebar ketika diklik
+              onClick={handleLinkClick} 
               className="block p-2 rounded hover:bg-gray-700"
             >
               Absensi
@@ -117,7 +117,7 @@ const Sidebar = () => {
           <li>
             <a
               href="/karyawan"
-              onClick={handleLinkClick} // Menutup sidebar ketika diklik
+              onClick={handleLinkClick} 
               className="block p-2 rounded hover:bg-gray-700"
             >
               Karyawan
@@ -126,7 +126,7 @@ const Sidebar = () => {
           <li>
             <a
               href="/user"
-              onClick={handleLinkClick} // Menutup sidebar ketika diklik
+              onClick={handleLinkClick} 
               className="block p-2 rounded hover:bg-gray-700"
             >
               User

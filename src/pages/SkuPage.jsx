@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 function Skupage() {
-  const [searchDesc, setSearchDesc] = useState(""); // State untuk pencarian DESC
-  const [startDate, setStartDate] = useState(""); // State untuk tanggal awal
-  const [endDate, setEndDate] = useState(""); // State untuk tanggal akhir
-  const [currentPage, setCurrentPage] = useState(1); // Halaman saat ini
-  const [itemsPerPage] = useState(5); // Jumlah item per halaman
+  const [searchDesc, setSearchDesc] = useState(""); 
+  const [startDate, setStartDate] = useState(""); 
+  const [endDate, setEndDate] = useState(""); 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(5); 
 
   const handleSearchDesc = (e) => {
     setSearchDesc(e.target.value);
@@ -888,7 +888,7 @@ function Skupage() {
     }
   ];
 
-  // Filter data sesuai pencarian DESC dan tanggal
+
   const filteredData = allData.filter((item) => {
     return (
       filterByDesc(item.NAMA_ITEM) &&
@@ -899,12 +899,12 @@ function Skupage() {
     );
   });
 
-  // Menentukan data yang akan ditampilkan berdasarkan halaman
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Menghitung jumlah halaman
+  
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(filteredData.length / itemsPerPage); i++) {
     pageNumbers.push(i);

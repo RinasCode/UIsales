@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
@@ -15,10 +14,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Halaman tanpa Sidebar */}
         <Route path="/" element={<LoginPage />} />
 
-        {/* Halaman dengan Sidebar menggunakan BaseLayout */}
         <Route
           path="/resume"
           element={

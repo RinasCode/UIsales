@@ -19,18 +19,18 @@ function Karyawan() {
 
   const filterByDesc = (desc) => {
     return data.filter(item => {
-      // Ganti NAMA dengan DESC yang sesuai
-      const nama = item.NAMA || '';  // Pastikan jika item.NAMA undefined, akan diganti dengan string kosong
+   
+      const nama = item.NAMA || ''; 
       return nama.toLowerCase().includes(desc.toLowerCase());
     });
   };
 
   const handleEditClick = (id) => {
     console.log("Edit button clicked for ID:", id);
-    // Implementasi navigasi ke halaman edit atau tampilan modal untuk editing
+   
   };
 
-  // Data dummy untuk tabel
+  
   const data = [
     {
       NAMA: "Ade Oki Agus Pradana",
