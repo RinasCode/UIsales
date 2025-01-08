@@ -344,7 +344,7 @@ function Karyawan() {
     <>
       <br />
       <br />
-      <div className="flex flex-col sm:flex-row justify-between mb-4">
+      <div className="flex flex-col sm:flex-row justify-between mb-6">
         {/* Pencarian berdasarkan DESC */}
         <div className="flex items-center mb-4 sm:mb-0">
           <label className="mr-2">Search by DESC:</label>

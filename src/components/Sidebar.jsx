@@ -4,28 +4,38 @@ import user from "../assets/user.png";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpenAbsensi, setIsDropdownOpenAbsensi] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen); 
+    setIsOpen(!isOpen);
   };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const toggleDropdownAbsensi = () => {
+    setIsDropdownOpenAbsensi(!isDropdownOpenAbsensi);
+  };
+
   const toggleUserMenu = () => {
-    setIsUserMenuOpen(!isUserMenuOpen); 
+    setIsUserMenuOpen(!isUserMenuOpen);
   };
 
   const handleLogout = () => {
-    alert("Logout berhasil!"); 
-    window.location.href = "/"; 
+    alert("Logout berhasil!");
+    window.location.href = "/";
   };
 
   const handleLinkClick = () => {
-    setIsOpen(false); 
+    setIsOpen(false);
+  };
+
+  const handleLinkClickAbsensi = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -43,7 +53,7 @@ const Sidebar = () => {
           Global Dispomedika
         </h1>
         <ul className="mt-4 space-y-2 px-4">
-          {/* Dashboard Menu */}
+          {/* Stock Menu */}
           <li>
             <button
               onClick={toggleDropdown}
@@ -52,7 +62,7 @@ const Sidebar = () => {
               Stock
               <span>{isDropdownOpen ? "▲" : "▼"}</span>
             </button>
-            {/* Dropdown Items */}
+            {/* Dropdown Items Stock Menu*/}
             {isDropdownOpen && (
               <ul className="mt-2 ml-4 space-y-2">
                 <li>
@@ -86,11 +96,11 @@ const Sidebar = () => {
             )}
           </li>
 
-          {/* Menu Item Stok Detail Cabang */}
+          {/* Menu Sidebar*/}
           <li>
             <a
               href="/sales"
-              onClick={handleLinkClick} 
+              onClick={handleLinkClick}
               className="block p-2 rounded hover:bg-gray-700"
             >
               Sales
@@ -105,19 +115,79 @@ const Sidebar = () => {
               SKU
             </a>
           </li>
+          {/* Menu Absensi */}
           <li>
-            <a
-              href="/settings"
-              onClick={handleLinkClick} 
-              className="block p-2 rounded hover:bg-gray-700"
+            <button
+              onClick={toggleDropdownAbsensi}
+              className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
             >
               Absensi
-            </a>
+              <span>{isDropdownOpenAbsensi ? "▲" : "▼"}</span>
+            </button>
+            {/* Dropdown Items Stock Menu*/}
+            {isDropdownOpenAbsensi && (
+              <ul className="mt-2 ml-4 space-y-2">
+                <li>
+                  <a
+                    href="/dashboard"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/absensi"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Absensi
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/kunjungan"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Kunjungan
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/kegiatan"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Kegiatan
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/daftar_outlet"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Daftar Outlet
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/daftar_Pelanggan"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Daftar Pelanggan
+                  </a>
+                </li>
+              </ul>
+            )}
           </li>
           <li>
             <a
               href="/karyawan"
-              onClick={handleLinkClick} 
+              onClick={handleLinkClick}
               className="block p-2 rounded hover:bg-gray-700"
             >
               Karyawan
@@ -126,7 +196,7 @@ const Sidebar = () => {
           <li>
             <a
               href="/user"
-              onClick={handleLinkClick} 
+              onClick={handleLinkClick}
               className="block p-2 rounded hover:bg-gray-700"
             >
               User

@@ -9,6 +9,8 @@ import Sales from "./pages/Sales";
 import Skupage from "./pages/SkuPage";
 import Karyawan from "./pages/KaryawanPage";
 import UserList from "./pages/UserPage";
+import AbsensiHarian from "./pages/AbsensiHarian";
+import Kunjungan from "./pages/KunjunganPage";
 
 function App() {
   return (
@@ -75,6 +77,24 @@ function App() {
           element={
             <BaseLayout>
               <UserList />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/absensi"
+          element={
+            <BaseLayout>
+              <AbsensiHarian />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/kunjungan"
+          element={
+            <BaseLayout>
+              <Kunjungan />
             </BaseLayout>
           }
         />
