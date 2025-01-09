@@ -19,6 +19,8 @@ import DashboardPs from "./pages/DashboardPs";
 import DetailKunjungan from "./pages/DetailKunjunganPage";
 import AbsensiPs from "./pages/AbsensiPS";
 import FormAbsen from "./pages/FormAbsen";
+import KunjunganPs from "./pages/KunjunganPS";
+import FormKunjungan from "./pages/FormKunjungan";
 
 function App() {
   return (
@@ -173,7 +175,25 @@ function App() {
           path="/form_absen"
           element={
             <BaseLayout>
-              <FormAbsen/>
+              <FormAbsen />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/kunjungan_ps"
+          element={
+            <BaseLayout>
+              <KunjunganPs />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/form_kunjungan"
+          element={
+            <BaseLayout>
+              <FormKunjungan />
             </BaseLayout>
           }
         />

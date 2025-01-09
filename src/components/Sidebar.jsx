@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import user from "../assets/user.png";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,23 +45,22 @@ const Sidebar = () => {
 
   const handleLogout = () => {
     Swal.fire({
-      title: 'Are you sure?',
+      title: "Are you sure?",
       text: "Do you want to log out?",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, log out!',
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, log out!",
     }).then((result) => {
       if (result.isConfirmed) {
-        localStorage.clear(); 
+        localStorage.clear();
         Swal.fire(
-          'Logged out!',
-          'You have been logged out successfully.',
-          'success'
+          "Logged out!",
+          "You have been logged out successfully.",
+          "success"
         ).then(() => {
-   
-          window.location.href = "/"; 
+          window.location.href = "/";
         });
       }
     });
@@ -79,15 +78,26 @@ const Sidebar = () => {
     <div>
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ${isOpen ? "w-64" : "w-0"} overflow-auto`}
+        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ${
+          isOpen ? "w-64" : "w-0"
+        } overflow-auto`}
       >
         <h1
           className="text-xl font-bold p-4 cursor-pointer"
-          onClick={() => setIsOpen(false)} 
+          onClick={() => setIsOpen(false)}
         >
           Global Dispomedika
         </h1>
         <ul className="mt-4 space-y-2 px-4">
+          <li>
+            <a
+              href="/dashboard_dirut"
+              onClick={handleLinkClickAbsensi}
+              className="block p-2 rounded hover:bg-gray-700"
+            >
+              Dashboard
+            </a>
+          </li>
           {/* Stock Menu */}
           <li>
             <button
@@ -164,15 +174,6 @@ const Sidebar = () => {
               <ul className="mt-2 ml-4 space-y-2">
                 <li>
                   <a
-                    href="/dashboard_dirut"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="/absensi"
                     onClick={handleLinkClickAbsensi}
                     className="block p-2 rounded hover:bg-gray-700"
@@ -196,6 +197,15 @@ const Sidebar = () => {
                     className="block p-2 rounded hover:bg-gray-700"
                   >
                     Kunjungan
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/kunjungan_ps"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Kunjungan PS
                   </a>
                 </li>
                 <li>
