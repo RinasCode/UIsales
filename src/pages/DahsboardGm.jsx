@@ -76,7 +76,7 @@ function DashboardGm() {
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: "Sellout (in units)" },
+            title: { display: true, text: "Sellout (in value)" },
           },
         },
       },
@@ -119,7 +119,7 @@ function DashboardGm() {
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: "Sellout (in units)" },
+            title: { display: true, text: "Sellout (in value)" },
           },
         },
       },
@@ -204,7 +204,7 @@ function DashboardGm() {
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: "Sellout (in units)" },
+            title: { display: true, text: "Sellout (in value)" },
           },
         },
       },
@@ -224,7 +224,7 @@ function DashboardGm() {
   }, []);
 
   return (
-    <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg overflow-hidden mt-5">
       <h1 className="text-2xl font-bold text-center mb-6">Sellout Report GM</h1>
 
       {/* Target vs Achievement Pie Chart */}

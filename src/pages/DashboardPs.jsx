@@ -95,7 +95,7 @@ function DashboardPs() {
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: "Sellout (in units)" },
+            title: { display: true, text: "Sellout (in value)" },
           },
         },
       },
@@ -144,7 +144,7 @@ function DashboardPs() {
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: "Sellout (in units)" },
+            title: { display: true, text: "Sellout (in value)" },
           },
         },
       },
@@ -229,7 +229,7 @@ function DashboardPs() {
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: "Sellout (in units)" },
+            title: { display: true, text: "Sellout (in value)" },
           },
         },
       },
@@ -249,7 +249,7 @@ function DashboardPs() {
   }, []);
 
   return (
-    <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg overflow-hidden mt-5">
       {/* Card for Jam Kunjungan dan Kunjungan */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         <div className="flex items-center bg-blue-100 p-4 rounded-lg shadow">
@@ -266,7 +266,7 @@ function DashboardPs() {
           <div>
             <h3 className="font-semibold text-lg">Kunjungan Hari Ini</h3>
             <p>
-              {totalKunjunganHariIni} dari {targetKunjungan} kunjungan
+              {totalKunjunganHariIni} dari {targetKunjungan} kunjungan minggu ini
             </p>
             <p className="text-sm text-gray-500">({persenKunjungan}%)</p>
           </div>

@@ -18,6 +18,7 @@ import DashboardDm from "./pages/DashboardDm";
 import DashboardPs from "./pages/DashboardPs";
 import DetailKunjungan from "./pages/DetailKunjunganPage";
 import AbsensiPs from "./pages/AbsensiPS";
+import FormAbsen from "./pages/FormAbsen";
 
 function App() {
   return (
@@ -164,6 +165,15 @@ function App() {
           element={
             <BaseLayout>
               <DetailKunjungan />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/form_absen"
+          element={
+            <BaseLayout>
+              <FormAbsen/>
             </BaseLayout>
           }
         />

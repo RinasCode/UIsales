@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function AbsensiPs() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false); 
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [selectedFoto, setSelectedFoto] = useState(null);
   const [fotoUploadTime, setFotoUploadTime] = useState("");
   const [currentFoto, setCurrentFoto] = useState("");
@@ -103,12 +104,10 @@ function AbsensiPs() {
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
- 
       console.log("Foto yang di-upload: ", file);
-    
-      const fotoUrl = URL.createObjectURL(file); 
+
+      const fotoUrl = URL.createObjectURL(file);
       alert("Foto berhasil di-upload!");
-     
     }
   };
 
@@ -118,9 +117,10 @@ function AbsensiPs() {
         <h2 className="text-center text-2xl font-bold mb-2 mt-4">
           DAFTAR ABSENSI PS
         </h2>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded  ml-4 mb-4 ">
-          Absen
+        <button className="bg-blue-500 text-white px-4 py-2 rounded ml-4 mb-4">
+          <a href="/form_absen">Absen</a>
         </button>
+
         {/* Tabel User */}
         <div className="overflow-x-auto">
           <table className="table-auto border-collapse border border-gray-300 w-full">

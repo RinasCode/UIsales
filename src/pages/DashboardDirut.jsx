@@ -388,7 +388,7 @@ function DashboardDirut() {
   return (
     <div>
       {/* Sales Report */}
-      <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg mb-6">
+      <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg mb-6 mt-5">
         <h1 className="text-2xl font-bold text-center mb-6">Sellout Report Global Dispomedika</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="flex items-center bg-blue-100 p-4 rounded-lg shadow-md">
