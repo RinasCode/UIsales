@@ -74,9 +74,9 @@ function Sales() {
     }
   };
 
-  const [searchDesc, setSearchDesc] = useState(""); // State untuk pencarian DESC
-  const [startDate, setStartDate] = useState(""); // State untuk tanggal awal
-  const [endDate, setEndDate] = useState(""); // State untuk tanggal akhir
+  const [searchDesc, setSearchDesc] = useState(""); 
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState(""); 
   const [filteredData, setFilteredData] = useState([]);
 
   const handleSearchDesc = (e) => {

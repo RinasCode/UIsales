@@ -8,23 +8,23 @@ function DashboardPs() {
   const canvasTargetVsAchievementRef = useRef(null);
   const canvasSelloutByProductRef = useRef(null);
 
-  // Data kunjungan dan jam untuk perhitungan
-  const totalJamKunjunganHariIni = 3; // Total jam kunjungan hari ini
-  const targetJamKunjungan = 6; // Target jam kunjungan per hari
-  const totalKunjunganHariIni = 2; // Total kunjungan hari ini
-  const targetKunjungan = 8; // Target kunjungan per minggu
 
-  const sisaJam = targetJamKunjungan - totalJamKunjunganHariIni; // Jam yang kurang
-  const sisaKunjungan = targetKunjungan - totalKunjunganHariIni; // Kunjungan yang kurang
+  const totalJamKunjunganHariIni = 3; 
+  const targetJamKunjungan = 6; 
+  const totalKunjunganHariIni = 2; 
+  const targetKunjungan = 8; 
+
+  const sisaJam = targetJamKunjungan - totalJamKunjunganHariIni; 
+  const sisaKunjungan = targetKunjungan - totalKunjunganHariIni; 
 
   const persenJam = (
     (totalJamKunjunganHariIni / targetJamKunjungan) *
     100
-  ).toFixed(2); // Persentase jam kunjungan
+  ).toFixed(2); 
   const persenKunjungan = (
     (totalKunjunganHariIni / targetKunjungan) *
     100
-  ).toFixed(2); // Persentase kunjungan
+  ).toFixed(2); 
 
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");

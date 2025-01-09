@@ -365,9 +365,7 @@ function AbsensiHarian() {
     },
   ];
 
-  {
-    /* Pagination Logic */
-  }
+  
   const filteredUsers = users
     .filter((user) => {
       const matchSearch = user.nama_ps
@@ -566,6 +564,7 @@ function AbsensiHarian() {
             Next
           </button>
         </div>
+        
         {/* Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 flex justify-center items-center bg-gray-700 bg-opacity-50">

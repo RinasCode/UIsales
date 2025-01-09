@@ -182,11 +182,29 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <a
+                    href="/absensi_ps"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Absensi PS
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="/kunjungan"
                     onClick={handleLinkClickAbsensi}
                     className="block p-2 rounded hover:bg-gray-700"
                   >
                     Kunjungan
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/detail_kunjungan"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Detail Kunjungan
                   </a>
                 </li>
                 <li>

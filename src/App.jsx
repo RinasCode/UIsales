@@ -16,6 +16,8 @@ import DashboardGm from "./pages/DahsboardGm";
 import DashboardSm from "./pages/DashboardSm";
 import DashboardDm from "./pages/DashboardDm";
 import DashboardPs from "./pages/DashboardPs";
+import DetailKunjungan from "./pages/DetailKunjunganPage";
+import AbsensiPs from "./pages/AbsensiPS";
 
 function App() {
   return (
@@ -96,6 +98,15 @@ function App() {
         />
 
         <Route
+          path="/absensi_ps"
+          element={
+            <BaseLayout>
+              <AbsensiPs />
+            </BaseLayout>
+          }
+        />
+
+        <Route
           path="/kunjungan"
           element={
             <BaseLayout>
@@ -144,6 +155,15 @@ function App() {
           element={
             <BaseLayout>
               <DashboardPs />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/detail_kunjungan"
+          element={
+            <BaseLayout>
+              <DetailKunjungan />
             </BaseLayout>
           }
         />

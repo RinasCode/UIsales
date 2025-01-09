@@ -87,13 +87,13 @@ function UserList() {
 
   const handleAddOrEditUser = () => {
     if (newUser.id) {
-      // Jika user memiliki ID, artinya proses edit
+   
       setUsers(users.map((user) => (user.id === newUser.id ? newUser : user)));
     } else {
-      // Jika tidak memiliki ID, artinya proses tambah
+
       setUsers([...users, { ...newUser, id: users.length + 1 }]);
     }
-    // Reset form dan tutup modal
+
     setNewUser({
       id: null,
       username: "",
