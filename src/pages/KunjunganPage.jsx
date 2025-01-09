@@ -642,7 +642,7 @@ function Kunjungan() {
                   {user.total_jam_kunjungan}
                 </td>
                 <td className="border border-gray-300 px-4 py-2 text-center">
-                  {user.total_jam_kunjungan === 6
+                  {user.total_jam_kunjungan >= 6
                     ? "Tercapai"
                     : `Kurang ${6 - user.total_jam_kunjungan} jam`}
                 </td>

@@ -1,7 +1,92 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2"; 
 
 function LoginPage() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate(); 
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const validUsers = [
+      {
+        username: "ps",
+        password: "123",
+        role: "PS",
+        nama: "Product Specialist",
+      },
+      { username: "dm", password: "123", role: "DM", nama: "District Manager" },
+      { username: "sm", password: "123", role: "SM", nama: "Sales Manager" },
+      {
+        username: "ms",
+        password: "123",
+        role: "MS",
+        nama: "Marketing Specialist",
+      },
+      { username: "gm", password: "123", role: "GM", nama: "General Manager" },
+      { username: "direktur", password: "123", role: "DR", nama: "Direktur" },
+      { username: "admin", password: "123", role: "ADM", nama: "Admin" },
+    ];
+
+    const user = validUsers.find(
+      (u) => u.username === username && u.password === password
+    );
+    console.log("User found:", user);
+
+    if (user) {
+      localStorage.setItem("role", user.role);
+      Swal.fire({
+        title: `Welcome, ${user.nama}!`,
+        text: "Login successful!",
+        icon: "success",
+        confirmButtonText: "OK",
+      }).then(() => {
+     
+        if (user.role === "ADM" || user.role === "DR") {
+          navigate("/dashboard_dirut");
+        } else if (user.role === "GM") {
+          navigate("/dashboard_gm"); 
+        } else if (user.role === "SM") {
+          navigate("/dashboard_sm"); 
+        } else if (user.role === "DM") {
+          navigate("/dashboard_dm"); 
+        } else if (user.role === "PS") {
+          navigate("/dashboard_ps"); 
+        } else {
+          navigate("/"); 
+        }
+      });
+      
+    } else {
+      Swal.fire({
+        title: "Error!",
+        text: "Invalid username or password.",
+        icon: "error",
+        confirmButtonText: "Try Again",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const role = localStorage.getItem("role");
+
+    if (role === "ADM" || role === "DR") {
+      navigate("/dashboard_dirut");
+    } else if (role === "GM") {
+      navigate("/dashboard_gm");
+    } else if (role === "SM") {
+      navigate("/dashboard_sm");
+    } else if (role === "DM") {
+      navigate("/dashboard_dm");
+    } else if (role === "PS") {
+      navigate("/dashboard_ps");
+    } else {
+      navigate("/"); 
+    }
+  }, [navigate]);
+
   return (
     <>
       <div className="hero bg-base-200 min-h-screen">
@@ -15,16 +100,18 @@ function LoginPage() {
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form className="card-body">
+            <form className="card-body" onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Username</span>
                 </label>
                 <input
-                  type="username"
+                  type="text"
                   placeholder="username"
                   className="input input-bordered"
                   required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)} 
                 />
               </div>
               <div className="form-control">
@@ -36,10 +123,14 @@ function LoginPage() {
                   placeholder="password"
                   className="input input-bordered"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)} 
                 />
               </div>
               <div className="form-control mt-6">
-                <Link to="/resume" className="btn btn-primary">Login</Link>
+                <button type="submit" className="btn btn-primary">
+                  Login
+                </button>
               </div>
             </form>
           </div>

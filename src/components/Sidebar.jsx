@@ -1,13 +1,31 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logo from "../assets/logo.png";
 import user from "../assets/user.png";
+import Swal from 'sweetalert2';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpenAbsensi, setIsDropdownOpenAbsensi] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [userName, setUserName] = useState("");
 
+  const roles = {
+    PS: "Product Specialist",
+    DM: "District Manager",
+    SM: "Sales Manager",
+    MS: "Marketing Specialist",
+    GM: "General Manager",
+    DR: "Direktur",
+    ADM: "Admin",
+  };
+
+  useEffect(() => {
+    const role = localStorage.getItem("role");
+    if (role && roles[role]) {
+      setUserName(roles[role]);
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -26,8 +44,27 @@ const Sidebar = () => {
   };
 
   const handleLogout = () => {
-    alert("Logout berhasil!");
-    window.location.href = "/";
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to log out?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, log out!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear(); 
+        Swal.fire(
+          'Logged out!',
+          'You have been logged out successfully.',
+          'success'
+        ).then(() => {
+   
+          window.location.href = "/"; 
+        });
+      }
+    });
   };
 
   const handleLinkClick = () => {
@@ -42,13 +79,11 @@ const Sidebar = () => {
     <div>
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ${
-          isOpen ? "w-64" : "w-0"
-        } overflow-hidden`}
+        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ${isOpen ? "w-64" : "w-0"} overflow-auto`}
       >
         <h1
           className="text-xl font-bold p-4 cursor-pointer"
-          onClick={() => setIsOpen(false)} // Menutup sidebar ketika judul diklik
+          onClick={() => setIsOpen(false)} 
         >
           Global Dispomedika
         </h1>
@@ -124,12 +159,12 @@ const Sidebar = () => {
               Absensi
               <span>{isDropdownOpenAbsensi ? "▲" : "▼"}</span>
             </button>
-            {/* Dropdown Items Stock Menu*/}
+            {/* Dropdown Items Absensi Menu*/}
             {isDropdownOpenAbsensi && (
               <ul className="mt-2 ml-4 space-y-2">
                 <li>
                   <a
-                    href="/dashboard"
+                    href="/dashboard_dirut"
                     onClick={handleLinkClickAbsensi}
                     className="block p-2 rounded hover:bg-gray-700"
                   >
@@ -236,7 +271,7 @@ const Sidebar = () => {
                 alt="User Avatar"
                 className="rounded-full w-10 h-10"
               />
-              <span className="ml-2">David Jody Patrick Pello</span>
+              <span className="ml-2">{userName || "User"}</span>
             </div>
             {isUserMenuOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg">

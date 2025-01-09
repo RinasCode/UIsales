@@ -11,6 +11,11 @@ import Karyawan from "./pages/KaryawanPage";
 import UserList from "./pages/UserPage";
 import AbsensiHarian from "./pages/AbsensiHarian";
 import Kunjungan from "./pages/KunjunganPage";
+import DashboardDirut from "./pages/DashboardDirut";
+import DashboardGm from "./pages/DahsboardGm";
+import DashboardSm from "./pages/DashboardSm";
+import DashboardDm from "./pages/DashboardDm";
+import DashboardPs from "./pages/DashboardPs";
 
 function App() {
   return (
@@ -95,6 +100,50 @@ function App() {
           element={
             <BaseLayout>
               <Kunjungan />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/dashboard_dirut"
+          element={
+            <BaseLayout>
+              <DashboardDirut />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/dashboard_gm"
+          element={
+            <BaseLayout>
+              <DashboardGm />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/dashboard_sm"
+          element={
+            <BaseLayout>
+              <DashboardSm />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/dashboard_dm"
+          element={
+            <BaseLayout>
+              <DashboardDm />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/dashboard_ps"
+          element={
+            <BaseLayout>
+              <DashboardPs />
             </BaseLayout>
           }
         />
