@@ -21,6 +21,11 @@ import AbsensiPs from "./pages/AbsensiPS";
 import FormAbsen from "./pages/FormAbsen";
 import KunjunganPs from "./pages/KunjunganPS";
 import FormKunjungan from "./pages/FormKunjungan";
+import DaftarPE from "./pages/DaftarPE";
+import PEProductSpecialist from "./pages/PEProductSpecialist";
+import FormPE from "./pages/FormPE";
+import DaftarOutlet from "./pages/DaftarOutlet";
+import DaftarPS from "./pages/DaftarPS";
 
 function App() {
   return (
@@ -194,6 +199,51 @@ function App() {
           element={
             <BaseLayout>
               <FormKunjungan />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/daftar_pe"
+          element={
+            <BaseLayout>
+              <DaftarPE />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/daftar_pe_ps"
+          element={
+            <BaseLayout>
+              <PEProductSpecialist />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/form_pe"
+          element={
+            <BaseLayout>
+              <FormPE />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/daftar_outlet"
+          element={
+            <BaseLayout>
+              <DaftarOutlet />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/daftar_ps"
+          element={
+            <BaseLayout>
+              <DaftarPS />
             </BaseLayout>
           }
         />

@@ -219,11 +219,20 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <a
-                    href="/kegiatan"
+                    href="/daftar_pe"
                     onClick={handleLinkClickAbsensi}
                     className="block p-2 rounded hover:bg-gray-700"
                   >
                     Kegiatan
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/daftar_pe_ps"
+                    onClick={handleLinkClickAbsensi}
+                    className="block p-2 rounded hover:bg-gray-700"
+                  >
+                    Kegiatan PS
                   </a>
                 </li>
                 <li>
@@ -237,11 +246,11 @@ const Sidebar = () => {
                 </li>
                 <li>
                   <a
-                    href="/daftar_Pelanggan"
+                    href="/daftar_ps"
                     onClick={handleLinkClickAbsensi}
                     className="block p-2 rounded hover:bg-gray-700"
                   >
-                    Daftar Pelanggan
+                    Daftar PS
                   </a>
                 </li>
               </ul>
