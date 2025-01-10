@@ -301,9 +301,9 @@ function DashboardPs() {
         </div>
       </div>
 
-      {/* Monthly Report Bar Chart */}
+      {/* History Report Bar Chart */}
       <div className="bg-white p-4 rounded-lg shadow mb-6">
-        <h2 className="text-xl font-semibold mb-4">Monthly Report</h2>
+        <h2 className="text-xl font-semibold mb-4">History Sellout</h2>
         <div className="h-72">
           <canvas ref={canvasRef}></canvas>
         </div>
