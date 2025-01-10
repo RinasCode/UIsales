@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -43,22 +43,20 @@ function LoginPage() {
         icon: "success",
         confirmButtonText: "OK",
       }).then(() => {
-     
         if (user.role === "ADM" || user.role === "DR") {
           navigate("/dashboard_dirut");
         } else if (user.role === "GM") {
-          navigate("/dashboard_gm"); 
+          navigate("/dashboard_gm");
         } else if (user.role === "SM") {
-          navigate("/dashboard_sm"); 
+          navigate("/dashboard_sm");
         } else if (user.role === "DM") {
-          navigate("/dashboard_dm"); 
+          navigate("/dashboard_dm");
         } else if (user.role === "PS") {
-          navigate("/dashboard_ps"); 
+          navigate("/dashboard_ps");
         } else {
-          navigate("/"); 
+          navigate("/");
         }
       });
-      
     } else {
       Swal.fire({
         title: "Error!",
@@ -83,17 +81,24 @@ function LoginPage() {
     } else if (role === "PS") {
       navigate("/dashboard_ps");
     } else {
-      navigate("/"); 
+      navigate("/");
     }
   }, [navigate]);
 
   return (
     <>
-      <div className="hero bg-base-200 min-h-screen">
+      <div
+        className="hero bg-base-200 min-h-screen"
+        style={{
+          backgroundImage: `url("https://res.cloudinary.com/dcisb7ayn/image/upload/v1736514104/medical-banner-with-doctor-wearing-goggles_rnjyze.jpg")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Global Dispomedika</h1>
-            <p className="py-6">
+            <h1 className="text-5xl font-bold text-black">Global Dispomedika</h1>
+            <p className="py-6  text-black">
               Provide the highest quality medical device with the most complete
               product range and excellence services through continuous
               competency improvement, caring of health as well
@@ -111,7 +116,7 @@ function LoginPage() {
                   className="input input-bordered"
                   required
                   value={username}
-                  onChange={(e) => setUsername(e.target.value)} 
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className="form-control">
@@ -124,7 +129,7 @@ function LoginPage() {
                   className="input input-bordered"
                   required
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)} 
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="form-control mt-6">
