@@ -116,7 +116,7 @@ function DashboardPs() {
       labels: areas,
       datasets: [
         {
-          label: "Sellout by Area",
+          label: "Sellout by Outlet",
           data: selloutByArea,
           backgroundColor: "rgba(153, 102, 255, 0.6)",
           borderColor: "rgba(153, 102, 255, 1)",

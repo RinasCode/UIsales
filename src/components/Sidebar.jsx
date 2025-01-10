@@ -9,21 +9,22 @@ const Sidebar = () => {
   const [isDropdownOpenAbsensi, setIsDropdownOpenAbsensi] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [userName, setUserName] = useState("");
+  const [role, setRole] = useState("");
 
   const roles = {
     PS: "Product Specialist",
     DM: "District Manager",
     SM: "Sales Manager",
-    MS: "Marketing Specialist",
     GM: "General Manager",
     DR: "Direktur",
     ADM: "Admin",
   };
 
   useEffect(() => {
-    const role = localStorage.getItem("role");
-    if (role && roles[role]) {
-      setUserName(roles[role]);
+    const storedRole = localStorage.getItem("role");
+    if (storedRole && roles[storedRole]) {
+      setUserName(roles[storedRole]);
+      setRole(storedRole);
     }
   }, []);
 
@@ -66,17 +67,355 @@ const Sidebar = () => {
     });
   };
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
+  const getDashboardLink = () => {
+    switch (role) {
+      case "ADM":
+      case "DR":
+        return "/dashboard_dirut";
+      case "GM":
+        return "/dashboard_gm";
+      case "SM":
+        return "/dashboard_sm";
+      case "DM":
+        return "/dashboard_dm";
+      case "PS":
+        return "/dashboard_ps";
+      default:
+        return "/";
+    }
   };
 
-  const handleLinkClickAbsensi = () => {
-    setIsOpen(false);
+  const renderMenu = () => {
+    switch (role) {
+      case "ADM":
+      case "DR":
+        return (
+          <>
+            <li>
+              <a
+                href={getDashboardLink()}
+                className="block p-2 rounded hover:bg-gray-700"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={toggleDropdown}
+                className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
+              >
+                Stock
+                <span>{isDropdownOpen ? "▲" : "▼"}</span>
+              </button>
+              {isDropdownOpen && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  <li>
+                    <a
+                      href="/stockdetail"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Stock Detail Cabang
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/stockgdm"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Stock GDM Update
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/resume"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Resume
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <a href="/sales" className="block p-2 rounded hover:bg-gray-700">
+                Sales
+              </a>
+            </li>
+            <li>
+              <a href="/sku" className="block p-2 rounded hover:bg-gray-700">
+                SKU
+              </a>
+            </li>
+            {/* Menu Absensi */}
+            <li>
+              <button
+                onClick={toggleDropdownAbsensi}
+                className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
+              >
+                Absensi
+                <span>{isDropdownOpenAbsensi ? "▲" : "▼"}</span>
+              </button>
+              {isDropdownOpenAbsensi && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  <li>
+                    <a
+                      href="/absensi"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Absensi
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/absensi_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Absensi PS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/kunjungan"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Kunjungan
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/kunjungan_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Kunjungan PS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/detail_kunjungan"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Detail Kunjungan
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/daftar_pe"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Kegiatan
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/daftar_pe_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Kegiatan PS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/daftar_outlet"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Daftar Outlet
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/daftar_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Daftar PS
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <a
+                href="/karyawan"
+                className="block p-2 rounded hover:bg-gray-700"
+              >
+                Karyawan
+              </a>
+            </li>
+            <li>
+              <a href="/user" className="block p-2 rounded hover:bg-gray-700">
+                User
+              </a>
+            </li>
+          </>
+        );
+
+      case "GM":
+      case "SM":
+      case "DM":
+        return (
+          <>
+            <li>
+              <a
+                href={getDashboardLink()}
+                className="block p-2 rounded hover:bg-gray-700"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={toggleDropdown}
+                className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
+              >
+                Stock
+                <span>{isDropdownOpen ? "▲" : "▼"}</span>
+              </button>
+              {isDropdownOpen && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  <li>
+                    <a
+                      href="/stockdetail"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Stock Detail Cabang
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/stockgdm"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Stock GDM Update
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/resume"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Resume
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <a href="/sales" className="block p-2 rounded hover:bg-gray-700">
+                Sales
+              </a>
+            </li>
+            <li>
+              <a href="/sku" className="block p-2 rounded hover:bg-gray-700">
+                SKU
+              </a>
+            </li>
+          </>
+        );
+
+      case "PS":
+        return (
+          <>
+            <li>
+              <a
+                href={getDashboardLink()}
+                className="block p-2 rounded hover:bg-gray-700"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={toggleDropdown}
+                className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
+              >
+                Stock
+                <span>{isDropdownOpen ? "▲" : "▼"}</span>
+              </button>
+              {isDropdownOpen && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  <li>
+                    <a
+                      href="/stockdetail"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Stock Detail Cabang
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/stockgdm"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Stock GDM Update
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/resume"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Resume
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <a href="/sales" className="block p-2 rounded hover:bg-gray-700">
+                Sales
+              </a>
+            </li>
+            <li>
+              <a href="/sku" className="block p-2 rounded hover:bg-gray-700">
+                SKU
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={toggleDropdownAbsensi}
+                className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
+              >
+                Absensi
+                <span>{isDropdownOpenAbsensi ? "▲" : "▼"}</span>
+              </button>
+              {isDropdownOpenAbsensi && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  <li>
+                    <a
+                      href="/absensi_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Absensi PS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/kunjungan_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Kunjungan PS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/daftar_pe_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Kegiatan PS
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
+          </>
+        );
+
+      default:
+        return null;
+    }
   };
 
   return (
     <div>
-      {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ${
           isOpen ? "w-64" : "w-0"
@@ -88,196 +427,9 @@ const Sidebar = () => {
         >
           Global Dispomedika
         </h1>
-        <ul className="mt-4 space-y-2 px-4">
-          <li>
-            <a
-              href="/dashboard_dirut"
-              onClick={handleLinkClickAbsensi}
-              className="block p-2 rounded hover:bg-gray-700"
-            >
-              Dashboard
-            </a>
-          </li>
-          {/* Stock Menu */}
-          <li>
-            <button
-              onClick={toggleDropdown}
-              className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
-            >
-              Stock
-              <span>{isDropdownOpen ? "▲" : "▼"}</span>
-            </button>
-            {/* Dropdown Items Stock Menu*/}
-            {isDropdownOpen && (
-              <ul className="mt-2 ml-4 space-y-2">
-                <li>
-                  <a
-                    href="/stockdetail"
-                    onClick={handleLinkClick}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Stock Detail Cabang
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/stockgdm"
-                    onClick={handleLinkClick}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Stock GDM Update
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/resume"
-                    onClick={handleLinkClick}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Resume
-                  </a>
-                </li>
-              </ul>
-            )}
-          </li>
-
-          {/* Menu Sidebar*/}
-          <li>
-            <a
-              href="/sales"
-              onClick={handleLinkClick}
-              className="block p-2 rounded hover:bg-gray-700"
-            >
-              Sales
-            </a>
-          </li>
-          <li>
-            <a
-              href="/sku"
-              onClick={handleLinkClick}
-              className="block p-2 rounded hover:bg-gray-700"
-            >
-              SKU
-            </a>
-          </li>
-          {/* Menu Absensi */}
-          <li>
-            <button
-              onClick={toggleDropdownAbsensi}
-              className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
-            >
-              Absensi
-              <span>{isDropdownOpenAbsensi ? "▲" : "▼"}</span>
-            </button>
-            {/* Dropdown Items Absensi Menu*/}
-            {isDropdownOpenAbsensi && (
-              <ul className="mt-2 ml-4 space-y-2">
-                <li>
-                  <a
-                    href="/absensi"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Absensi
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/absensi_ps"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Absensi PS
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/kunjungan"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Kunjungan
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/kunjungan_ps"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Kunjungan PS
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/detail_kunjungan"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Detail Kunjungan
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/daftar_pe"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Kegiatan
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/daftar_pe_ps"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Kegiatan PS
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/daftar_outlet"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Daftar Outlet
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/daftar_ps"
-                    onClick={handleLinkClickAbsensi}
-                    className="block p-2 rounded hover:bg-gray-700"
-                  >
-                    Daftar PS
-                  </a>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li>
-            <a
-              href="/karyawan"
-              onClick={handleLinkClick}
-              className="block p-2 rounded hover:bg-gray-700"
-            >
-              Karyawan
-            </a>
-          </li>
-          <li>
-            <a
-              href="/user"
-              onClick={handleLinkClick}
-              className="block p-2 rounded hover:bg-gray-700"
-            >
-              User
-            </a>
-          </li>
-        </ul>
+        <ul className="mt-4 space-y-2 px-4">{renderMenu()}</ul>
       </div>
 
-      {/* Navbar */}
       <div className="flex-1">
         <div className="flex justify-between items-center bg-white shadow p-4">
           <button
@@ -297,7 +449,6 @@ const Sidebar = () => {
             className="w-auto h-12"
           />
 
-          {/* User Menu */}
           <div className="relative">
             <div
               className="flex items-center cursor-pointer"
@@ -311,14 +462,14 @@ const Sidebar = () => {
               <span className="ml-2">{userName || "User"}</span>
             </div>
             {isUserMenuOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg">
-                <button
+              <ul className="absolute right-0 bg-white text-black shadow rounded mt-2 w-40">
+                <li
+                  className="hover:bg-gray-200 px-4 py-2 cursor-pointer"
                   onClick={handleLogout}
-                  className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 transition-all duration-300 ease-in-out rounded-md shadow-md"
                 >
                   Logout
-                </button>
-              </div>
+                </li>
+              </ul>
             )}
           </div>
         </div>
