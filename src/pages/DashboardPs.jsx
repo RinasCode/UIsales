@@ -264,7 +264,7 @@ function DashboardPs() {
 
         <div className="flex items-center bg-green-100 p-4 rounded-lg shadow">
           <div>
-            <h3 className="font-semibold text-lg">Kunjungan Hari Ini</h3>
+            <h3 className="font-semibold text-lg">Kunjungan Minggu Ini</h3>
             <p>
               {totalKunjunganHariIni} dari {targetKunjungan} kunjungan minggu ini
             </p>
