@@ -169,7 +169,7 @@ function PEProductSpecialist() {
                       }
                       className={`${
                         !user.foto_kegiatan
-                          ? "text-yellow-400 cursor-pointer"
+                          ? "text-red-400 cursor-pointer"
                           : "text-blue-500 cursor-pointer"
                       } text-sm font-medium hover:underline`}
                     >

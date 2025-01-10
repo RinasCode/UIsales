@@ -203,7 +203,7 @@ function AbsensiPs() {
                       }
                       className={`${
                         !user.foto_absen_masuk
-                          ? "text-yellow-400 cursor-pointer"
+                          ? "text-red-400 cursor-pointer"
                           : "text-blue-500 cursor-pointer"
                       } text-sm font-medium hover:underline`}
                     >
@@ -219,7 +219,7 @@ function AbsensiPs() {
                       }
                       className={`${
                         !user.foto_absen_pulang
-                          ? "text-yellow-400 cursor-pointer"
+                          ? "text-red-400 cursor-pointer"
                           : "text-blue-500 cursor-pointer"
                       } text-sm font-medium hover:underline`}
                     >
