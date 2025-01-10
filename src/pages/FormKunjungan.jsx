@@ -3,18 +3,39 @@ import Swal from "sweetalert2";
 
 function FormKunjungan() {
   const [tanggal, setTanggal] = useState("");
-  const [jamLogin, setJamLogin] = useState("");
+  const [jam, setJam] = useState("");
   const [outlet, setOutlet] = useState("");
   const [user, setUser] = useState("");
   const [keterangan, setKeterangan] = useState("");
   const [foto, setFoto] = useState(null);
+  const [isAbsenMasuk, setIsAbsenMasuk] = useState(true); // Menentukan apakah ini In Outlet atau Out Outlet
+  const [lokasi, setLokasi] = useState({ latitude: "", longitude: "" }); // Menyimpan lokasi GPS
 
   useEffect(() => {
     const now = new Date();
     const today = now.toISOString().split("T")[0];
     const time = now.toTimeString().split(" ")[0].slice(0, 5);
     setTanggal(today);
-    setJamLogin(time);
+    setJam(time);
+
+    // Mendapatkan lokasi GPS
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setLokasi({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        () => {
+          Swal.fire({
+            icon: "error",
+            title: "Gagal",
+            text: "Tidak dapat mengambil lokasi GPS.",
+          });
+        }
+      );
+    }
   }, []);
 
   const handleSubmit = (e) => {
@@ -33,18 +54,22 @@ function FormKunjungan() {
       outlet,
       user,
       tanggal,
-      jamLogin,
+      jam,
       keterangan,
       foto,
+      lokasi, // Menyertakan lokasi GPS dalam form data
     };
 
-    console.log("Form Data:", formData);
-
+    // Menampilkan notifikasi berdasarkan status absen
     Swal.fire({
       icon: "success",
       title: "Berhasil",
-      text: "Data kunjungan berhasil disimpan!",
+      text: isAbsenMasuk
+        ? "In Outlet berhasil disimpan!"
+        : "Out Outlet berhasil disimpan!",
     });
+
+    setIsAbsenMasuk(!isAbsenMasuk); // Toggle antara In Outlet dan Out Outlet
   };
 
   return (
@@ -98,12 +123,14 @@ function FormKunjungan() {
           />
         </div>
 
-        {/* Jam Login */}
+        {/* Jam */}
         <div className="mb-4">
-          <label className="block font-medium mb-2">Jam Login</label>
+          <label className="block font-medium mb-2">
+            {isAbsenMasuk ? "Jam In Outlet" : "Jam Out Outlet"}
+          </label>
           <input
             type="time"
-            value={jamLogin}
+            value={jam}
             disabled
             className="w-full px-3 py-2 border rounded bg-gray-200"
           />
@@ -132,12 +159,23 @@ function FormKunjungan() {
           />
         </div>
 
+        {/* Lokasi GPS */}
+        <div className="mb-4">
+          <label className="block font-medium mb-2">Lokasi GPS</label>
+          <div className="w-full px-3 py-2 border rounded bg-gray-200">
+            <p>Latitude: {lokasi.latitude}</p>
+            <p>Longitude: {lokasi.longitude}</p>
+          </div>
+        </div>
+
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className={`w-full px-4 py-2 text-white rounded ${
+            isAbsenMasuk ? "bg-blue-500 hover:bg-blue-600" : "bg-green-500 hover:bg-green-600"
+          }`}
         >
-          Simpan
+          {isAbsenMasuk ? "In Outlet" : "Out Outlet"}
         </button>
       </form>
     </div>
