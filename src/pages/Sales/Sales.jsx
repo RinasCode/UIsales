@@ -831,7 +831,7 @@ function Sales() {
       <div className="flex flex-col sm:flex-row justify-between mb-4">
         {/* Pencarian berdasarkan DESC */}
         <div className="flex items-center mb-4 sm:mb-0">
-          <label className="mr-2">Search:</label>
+          <label className="mr-2 ml-3">Search:</label>
           <input
             type="text"
             value={searchDesc}

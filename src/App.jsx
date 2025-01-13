@@ -1,31 +1,32 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import ResumePage from "./pages/ResumePage";
 import BaseLayout from "./components/BaseLayout";
-import StockGdmUpdate from "./pages/StockGdmUpdate";
-import StockDetailCabang from "./pages/StockDetailCabang";
-import Sales from "./pages/Sales";
+import ResumePage from "./pages/Stock/ResumePage";
+import StockGdmUpdate from "./pages/Stock/StockGdmUpdate";
+import StockDetailCabang from "./pages/Stock/StockDetailCabang";
+import Sales from "./pages/Sales/Sales";
 import Skupage from "./pages/SkuPage";
 import Karyawan from "./pages/KaryawanPage";
 import UserList from "./pages/UserPage";
-import AbsensiHarian from "./pages/AbsensiHarian";
-import Kunjungan from "./pages/KunjunganPage";
-import DashboardDirut from "./pages/DashboardDirut";
-import DashboardGm from "./pages/DahsboardGm";
-import DashboardSm from "./pages/DashboardSm";
-import DashboardDm from "./pages/DashboardDm";
-import DashboardPs from "./pages/DashboardPs";
-import DetailKunjungan from "./pages/DetailKunjunganPage";
-import AbsensiPs from "./pages/AbsensiPS";
-import FormAbsen from "./pages/FormAbsen";
-import KunjunganPs from "./pages/KunjunganPS";
-import FormKunjungan from "./pages/FormKunjungan";
-import DaftarPE from "./pages/DaftarPE";
-import PEProductSpecialist from "./pages/PEProductSpecialist";
-import FormPE from "./pages/FormPE";
-import DaftarOutlet from "./pages/DaftarOutlet";
-import DaftarPS from "./pages/DaftarPS";
+import AbsensiHarian from "./pages/Absensi/AbsensiHarian";
+import Kunjungan from "./pages/Kunjungan/KunjunganPage";
+import DashboardDirut from "./pages/Dashboard/DashboardDirut";
+import DashboardGm from "./pages/Dashboard/DahsboardGm";
+import DashboardSm from "./pages/Dashboard/DashboardSm";
+import DashboardDm from "./pages/Dashboard/DashboardDm";
+import DashboardPs from "./pages/Dashboard/DashboardPs";
+import DetailKunjungan from "./pages/Kunjungan/DetailKunjunganPage";
+import AbsensiPs from "./pages/Absensi/AbsensiPS";
+import FormAbsen from "./pages/Absensi/FormAbsen";
+import KunjunganPs from "./pages/Kunjungan/KunjunganPS";
+import FormKunjungan from "./pages/Kunjungan/FormKunjungan";
+import DaftarPE from "./pages/PE/DaftarPE";
+import PEProductSpecialist from "./pages/PE/PEProductSpecialist";
+import FormPE from "./pages/PE/FormPE";
+import DaftarOutlet from "./pages/Outlet/DaftarOutlet";
+import DaftarPS from "./pages/PS/DaftarPS";
+import SalesUpdate from "./pages/Sales/SalesUpdate";
 
 function App() {
   return (
@@ -244,6 +245,15 @@ function App() {
           element={
             <BaseLayout>
               <DaftarPS />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/sales_update"
+          element={
+            <BaseLayout>
+              <SalesUpdate />
             </BaseLayout>
           }
         />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BaseLayout from "../components/BaseLayout";
+import BaseLayout from "../../components/BaseLayout";
 
 function ResumePage() {
   const [isOpen, setIsOpen] = useState(false); 
