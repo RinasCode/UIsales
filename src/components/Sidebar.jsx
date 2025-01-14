@@ -133,7 +133,7 @@ const Sidebar = () => {
                   </li>
                   <li>
                     <a
-                      href="/stockgdm"
+                      href="/sales_update_ps"
                       className="block p-2 rounded hover:bg-gray-700"
                     >
                       Sales History
@@ -377,15 +377,61 @@ const Sidebar = () => {
                 Dashboard
               </a>
             </li>
+                         {/* Menu Sales */}
+                         <li>
+              <button
+                onClick={toggleDropdownSales}
+                className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
+              >
+                Sales
+                <span>{isDropdownOpenSales ? "▲" : "▼"}</span>
+              </button>
+              {isDropdownOpenSales && (
+                <ul className="mt-2 ml-4 space-y-2">
+                  <li>
+                    <a
+                      href="/sales"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Upload Sales
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/sales_update_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Sales Update
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/sales_update_ps"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Sales History
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/resume"
+                      className="block p-2 rounded hover:bg-gray-700"
+                    >
+                      Sales Target
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
             <li>
               <button
-                onClick={toggleDropdown}
+                onClick={toggleDropdownStock}
                 className="flex justify-between w-full p-2 rounded hover:bg-gray-700"
               >
                 Stock
-                <span>{isDropdownOpen ? "▲" : "▼"}</span>
+                <span>{isDropdownOpenStock ? "▲" : "▼"}</span>
               </button>
-              {isDropdownOpen && (
+              {isDropdownOpenStock && (
                 <ul className="mt-2 ml-4 space-y-2">
                   <li>
                     <a
@@ -413,11 +459,6 @@ const Sidebar = () => {
                   </li>
                 </ul>
               )}
-            </li>
-            <li>
-              <a href="/sales" className="block p-2 rounded hover:bg-gray-700">
-                Sales
-              </a>
             </li>
             <li>
               <a href="/sku" className="block p-2 rounded hover:bg-gray-700">
@@ -534,3 +575,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+ 
