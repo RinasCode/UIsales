@@ -29,6 +29,8 @@ import DaftarPS from "./pages/PS/DaftarPS";
 import SalesUpdate from "./pages/Sales/SalesUpdate";
 import SalesUpdatePs from "./pages/Sales/SalesUpdatePs";
 import SalesHistoryPs from "./pages/Sales/SalesHistoryPs";
+import SalesHistory from "./pages/Sales/SalesHistory";
+import SalesTarget from "./pages/Sales/SalesTarget";
 
 function App() {
   return (
@@ -274,6 +276,22 @@ function App() {
           element={
             <BaseLayout>
               <SalesHistoryPs />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/sales_history"
+          element={
+            <BaseLayout>
+              <SalesHistory />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path="/sales_target"
+          element={
+            <BaseLayout>
+              <SalesTarget />
             </BaseLayout>
           }
         />

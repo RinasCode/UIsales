@@ -73,9 +73,9 @@ function Sales() {
     }
   };
 
-  const [searchDesc, setSearchDesc] = useState(""); 
+  const [searchDesc, setSearchDesc] = useState("");
   const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState(""); 
+  const [endDate, setEndDate] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
   const handleSearchDesc = (e) => {
@@ -93,19 +93,17 @@ function Sales() {
   const search = (item) => {
     return (
       item.NAMA_PS.toLowerCase().includes(searchDesc.toLowerCase()) ||
-      item["NAMA OUTLET"].toLowerCase().includes(searchDesc.toLowerCase())||
-      item.ITEM_NAME.toLowerCase().includes(searchDesc.toLowerCase())||
-      item.AREA.toLowerCase().includes(searchDesc.toLowerCase())||
-      item.CAB_GDM.toLowerCase().includes(searchDesc.toLowerCase())||
-      item.REG24.toLowerCase().includes(searchDesc.toLowerCase())||
-      item["WE/EA"].toLowerCase().includes(searchDesc.toLowerCase())
-      
+      item[NAMA_OUTLET].toLowerCase().includes(searchDesc.toLowerCase()) ||
+      item.ITEM_NAME.toLowerCase().includes(searchDesc.toLowerCase()) ||
+      item.AREA.toLowerCase().includes(searchDesc.toLowerCase()) ||
+      item.CAB_GDM.toLowerCase().includes(searchDesc.toLowerCase()) ||
+      item.REG24.toLowerCase().includes(searchDesc.toLowerCase()) ||
+      item[WE_EA].toLowerCase().includes(searchDesc.toLowerCase())
     );
   };
 
   useEffect(() => {
-    const filtered = 
-    [ 
+    const filtered = [
       {
         KODE_PPG: "A60727",
         KODE_MPI: "G@0481",
@@ -116,32 +114,32 @@ function Sales() {
         KODE_PS: "678",
         DISTRO: "MPI",
         NO_FAKTUR: "98909",
-        "Kode GDM Reguler": "2MMPGLPSM",
+        Kode_GDM_Reguler: "2MMPGLPSM",
         DISCOUNT: "0",
-        DISC_DB: "GEN",
-        "EKAT-SPC-GEN": "-20",
+        DISC_DB: "-20",
+        EKAT_SPC_GEN: "GEN",
         INVOICED_QTY: "-1935000",
         TOTAL_HNA: "0",
-        "V disc on GDM": "-1935000",
-        "V disc off GDM": "0",
+        V_disc_on_GDM: "-1935000",
+        V_disc_off_GDM: "0",
         NETT_VAL: "0",
-        "NAMA OUTLET": "RS PERMATA MADINA",
+        NAMA_OUTLET: "RS PERMATA MADINA",
         ITEM_NAME: "METRA GLOVES LX EXAM POW. S-2MMPGLPSM",
         DIV_ITEM: "HC",
         PRINCIPAL: "MMP",
         P_PROGRAM: "MMP",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "WEST",
+        Net_Disc: "0",
+        WE_EA: "WEST",
         REG24: "R3-ALFA",
         CAB: "JKT-01",
         NAMA_PS: "Ariska",
         AREA: "BDG DAGO_(B)",
         DIV_PS: "MIX",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "retur",
+         ret_jual: "retur",
         CAB_GDM: "JKT-01/JAKARTA RAWAMANGUN",
         CATEGORY: "MMP",
       },
@@ -155,32 +153,32 @@ function Sales() {
         KODE_PS: "678",
         DISTRO: "MPI",
         NO_FAKTUR: "98909",
-        "Kode GDM Reguler": "2MMPGLPSM",
+        Kode_GDM_Reguler: "2MMPGLPSM",
         DISCOUNT: "0",
-        DISC_DB: "GEN",
-        "EKAT-SPC-GEN": "-20",
+        DISC_DB: "-20",
+        EKAT_SPC_GEN: "GEN",
         INVOICED_QTY: "-1935000",
         TOTAL_HNA: "0",
-        "V disc on GDM": "-1935000",
-        "V disc off GDM": "0",
+        V_disc_on_GDM: "-1935000",
+        V_disc_off_GDM: "0",
         NETT_VAL: "0",
-        "NAMA OUTLET": "RS PERMATA MADINA",
+        NAMA_OUTLET: "RS PERMATA MADINA",
         ITEM_NAME: "METRA GLOVES LX EXAM POW. S-2MMPGLPSM",
         DIV_ITEM: "HC",
         PRINCIPAL: "MMP",
         P_PROGRAM: "MMP",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "WEST",
+        Net_Disc: "0",
+        WE_EA: "WEST",
         REG24: "R3-ALFA",
         CAB: "JKT-01",
         NAMA_PS: "Pamela",
         AREA: "BDG DAGO_(B)",
         DIV_PS: "MIX",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "retur",
+         ret_jual: "retur",
         CAB_GDM: "JKT-01/JAKARTA RAWAMANGUN",
         CATEGORY: "MMP",
       },
@@ -194,32 +192,32 @@ function Sales() {
         KODE_PS: "678",
         DISTRO: "MPI",
         NO_FAKTUR: "98909",
-        "Kode GDM Reguler": "2MMPGLPSM",
+        Kode_GDM_Reguler: "2MMPGLPSM",
         DISCOUNT: "0",
-        DISC_DB: "GEN",
-        "EKAT-SPC-GEN": "-20",
+        DISC_DB:  "-20",
+        EKAT_SPC_GEN:"GEN",
         INVOICED_QTY: "-1935000",
         TOTAL_HNA: "0",
-        "V disc on GDM": "-1935000",
-        "V disc off GDM": "0",
+        V_disc_on_GDM: "-1935000",
+        V_disc_off_GDM: "0",
         NETT_VAL: "0",
-        "NAMA OUTLET": "RS PERMATA MADINA",
+        NAMA_OUTLET: "RS PERMATA MADINA",
         ITEM_NAME: "METRA GLOVES LX EXAM POW. S-2MMPGLPSM",
         DIV_ITEM: "HC",
         PRINCIPAL: "MMP",
         P_PROGRAM: "MMP",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "WEST",
+        Net_Disc: "0",
+        WE_EA: "WEST",
         REG24: "R3-ALFA",
         CAB: "JKT-01",
         NAMA_PS: "Jessica",
         AREA: "BDG DAGO_(B)",
         DIV_PS: "MIX",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "retur",
+         ret_jual: "retur",
         CAB_GDM: "JKT-01/JAKARTA RAWAMANGUN",
         CATEGORY: "MMP",
       },
@@ -233,32 +231,32 @@ function Sales() {
         KODE_PS: "145",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2PTRAD20F",
+        Kode_GDM_Reguler: "2PTRAD20F",
         DISCOUNT: "20",
         DISC_DB: "5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "5",
         TOTAL_HNA: "537500",
-        "V disc on GDM": "107500",
-        "V disc off GDM": "26875",
+        V_disc_on_GDM: "107500",
+        V_disc_off_GDM: "26875",
         NETT_VAL: "403125",
-        "NAMA OUTLET": "RS ANUGRAH MEDICAL",
+        NAMA_OUTLET: "RS ANUGRAH MEDICAL",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "MC",
-        "Net Disc": "205",
-        "WE/EA": "WEST",
+        Net_Disc: "205",
+        WE_EA: "WEST",
         REG24: "R1-SAFIR",
         CAB: "JKT-02",
         NAMA_PS: "Muhammad Ghafransyah Ikram",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-02/JAKARTA HARKIT",
         CATEGORY: "",
       },
@@ -272,32 +270,32 @@ function Sales() {
         KODE_PS: "145",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2PTRAD20F",
+        Kode_GDM_Reguler: "2PTRAD20F",
         DISCOUNT: "20",
         DISC_DB: "5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "5",
         TOTAL_HNA: "537500",
-        "V disc on GDM": "107500",
-        "V disc off GDM": "26875",
+        V_disc_on_GDM: "107500",
+        V_disc_off_GDM: "26875",
         NETT_VAL: "403125",
-        "NAMA OUTLET": "RS ANUGRAH MEDICAL",
+        NAMA_OUTLET: "RS ANUGRAH MEDICAL",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "MC",
-        "Net Disc": "205",
-        "WE/EA": "WEST",
+        Net_Disc: "205",
+        WE_EA: "WEST",
         REG24: "R1-SAFIR",
         CAB: "JKT-02",
         NAMA_PS: "Shinta",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-02/JAKARTA HARKIT",
         CATEGORY: "",
       },
@@ -311,32 +309,32 @@ function Sales() {
         KODE_PS: "145",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2PTRAD20F",
+        Kode_GDM_Reguler: "2PTRAD20F",
         DISCOUNT: "20",
         DISC_DB: "5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "5",
         TOTAL_HNA: "537500",
-        "V disc on GDM": "107500",
-        "V disc off GDM": "26875",
+        V_disc_on_GDM: "107500",
+        V_disc_off_GDM: "26875",
         NETT_VAL: "403125",
-        "NAMA OUTLET": "RS ANUGRAH MEDICAL",
+        NAMA_OUTLET: "RS ANUGRAH MEDICAL",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "MC",
-        "Net Disc": "205",
-        "WE/EA": "WEST",
+        Net_Disc: "205",
+        WE_EA: "WEST",
         REG24: "R1-SAFIR",
         CAB: "JKT-02",
         NAMA_PS: "Clara",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-02/JAKARTA HARKIT",
         CATEGORY: "",
       },
@@ -350,32 +348,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RS MELATI",
+        NAMA_OUTLET: "RS MELATI",
         ITEM_NAME: "STERICLIN FLT20CM/200M-2VPSPST20",
         DIV_ITEM: "HC",
         PRINCIPAL: "STERICLIN",
         P_PROGRAM: "STERICLIN",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "WEST",
+        Net_Disc: "0",
+        WE_EA: "WEST",
         REG24: "R2-GAMMA",
         CAB: "JKT-03",
         NAMA_PS: "Rizky",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-03/JAKARTA SALEMBA",
         CATEGORY: "FLT",
       },
@@ -389,32 +387,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RS MELATI",
+        NAMA_OUTLET: "RS MELATI",
         ITEM_NAME: "STERICLIN FLT20CM/200M-2VPSPST20",
         DIV_ITEM: "HC",
         PRINCIPAL: "STERICLIN",
         P_PROGRAM: "STERICLIN",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "WEST",
+        Net_Disc: "0",
+        WE_EA: "WEST",
         REG24: "R2-GAMMA",
         CAB: "JKT-03",
         NAMA_PS: "Sandria",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-03/JAKARTA SALEMBA",
         CATEGORY: "FLT",
       },
@@ -428,32 +426,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RS MELATI",
+        NAMA_OUTLET: "RS MELATI",
         ITEM_NAME: "STERICLIN FLT20CM/200M-2VPSPST20",
         DIV_ITEM: "HC",
         PRINCIPAL: "STERICLIN",
         P_PROGRAM: "STERICLIN",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "WEST",
+        Net_Disc: "0",
+        WE_EA: "WEST",
         REG24: "R2-GAMMA",
         CAB: "JKT-03",
         NAMA_PS: "Alexa",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-03/JAKARTA SALEMBA",
         CATEGORY: "FLT",
       },
@@ -467,32 +465,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RS DELIMA",
+        NAMA_OUTLET: "RS DELIMA",
         ITEM_NAME: "STERICLIN FLT20CM/200M-2VPSPST20",
         DIV_ITEM: "HC",
         PRINCIPAL: "STERICLIN",
         P_PROGRAM: "STERICLIN",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R4-RUBBY",
         CAB: "JKT-04",
         NAMA_PS: "Alya",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-04/JAKARTA FATMAWATI",
         CATEGORY: "FLT",
       },
@@ -506,32 +504,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RS DELIMA",
+        NAMA_OUTLET: "RS DELIMA",
         ITEM_NAME: "STERICLIN FLT20CM/200M-2VPSPST20",
         DIV_ITEM: "HC",
         PRINCIPAL: "STERICLIN",
         P_PROGRAM: "STERICLIN",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R4-RUBBY",
         CAB: "JKT-04",
         NAMA_PS: "Camilia",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-04/JAKARTA FATMAWATI",
         CATEGORY: "FLT",
       },
@@ -545,32 +543,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RS DELIMA",
+        NAMA_OUTLET: "RS DELIMA",
         ITEM_NAME: "STERICLIN FLT20CM/200M-2VPSPST20",
         DIV_ITEM: "HC",
         PRINCIPAL: "STERICLIN",
         P_PROGRAM: "STERICLIN",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R4-RUBBY",
         CAB: "JKT-04",
         NAMA_PS: "Vitri",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-04/JAKARTA FATMAWATI",
         CATEGORY: "FLT",
       },
@@ -584,32 +582,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RSUD BANDUNG",
+        NAMA_OUTLET: "RSUD BANDUNG",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R5-ONYX",
         CAB: "JKT-07",
         NAMA_PS: "Rizky",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-07/JAKARTA CENGKARENG",
         CATEGORY: "",
       },
@@ -623,32 +621,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RSUD BANDUNG",
+        NAMA_OUTLET: "RSUD BANDUNG",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R5-ONYX",
         CAB: "JKT-07",
         NAMA_PS: "Eby",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-07/JAKARTA CENGKARENG",
         CATEGORY: "",
       },
@@ -662,32 +660,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RSUD BANDUNG",
+        NAMA_OUTLET: "RSUD BANDUNG",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R5-ONYX",
         CAB: "JKT-07",
         NAMA_PS: "Lucy",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-07/JAKARTA CENGKARENG",
         CATEGORY: "",
       },
@@ -701,32 +699,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RSUD BANDUNG",
+        NAMA_OUTLET: "RSUD BANDUNG",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R6-SIGMA",
         CAB: "JKT-06",
         NAMA_PS: "Jelita",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+         ret_jual: "jual",
         CAB_GDM: "JKT-06/JAKARTA HALIM PERDANA KUSUMA",
         CATEGORY: "",
       },
@@ -740,32 +738,32 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RSUD BANDUNG",
+        NAMA_OUTLET: "RSUD BANDUNG",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R6-SIGMA",
         CAB: "JKT-06",
         NAMA_PS: "Metta",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+        ret_jual: "jual",
         CAB_GDM: "JKT-06/JAKARTA HALIM PERDANA KUSUMA",
         CATEGORY: "",
       },
@@ -779,54 +777,55 @@ function Sales() {
         KODE_PS: "345",
         DISTRO: "MPI",
         NO_FAKTUR: "150224006955",
-        "Kode GDM Reguler": "2VPSPST20",
+        Kode_GDM_Reguler: "2VPSPST20",
         DISCOUNT: "22.5",
         DISC_DB: "2.5",
-        "EKAT-SPC-GEN": "SPC",
+        EKAT_SPC_GEN: "SPC",
         INVOICED_QTY: "1",
         TOTAL_HNA: "1645000",
-        "V disc on GDM": "370125",
-        "V disc off GDM": "41125",
+        V_disc_on_GDM: "370125",
+        V_disc_off_GDM: "41125",
         NETT_VAL: "1233750",
-        "NAMA OUTLET": "RSUD BANDUNG",
+        NAMA_OUTLET: "RSUD BANDUNG",
         ITEM_NAME: "ADVANTIME 15D20F.3/0 -2PTRAD20F",
         DIV_ITEM: "MC",
         PRINCIPAL: "PETERS",
         P_PROGRAM: "PETERS",
         Gugus: "HC",
-        "Net Disc": "0",
-        "WE/EA": "EAST",
+        Net_Disc: "0",
+        WE_EA: "EAST",
         REG24: "R6-SIGMA",
         CAB: "JKT-06",
         NAMA_PS: "Dania",
         AREA: "PTN KHATULISTIWA_(F)",
         DIV_PS: "HC",
         MARK_DESC: "RS SWASTA",
-        "GOV-PRV": "PRIVATE",
+        GOV_PRV: "PRIVATE",
         AKD_AKL: "AKD",
-        "ret/jual": "jual",
+        ret_jual: "jual",
         CAB_GDM: "JKT-06/JAKARTA HALIM PERDANA KUSUMA",
         CATEGORY: "",
-      }
-    ] .filter((item) => search(item))
-    .filter((item) => {
-      const itemDate = new Date(item.TANGGAL);
-      const start = new Date(startDate);
-      const end = new Date(endDate);
+      },
+    ]
+      .filter((item) => search(item))
+      .filter((item) => {
+        const itemDate = new Date(item.TANGGAL);
+        const start = new Date(startDate);
+        const end = new Date(endDate);
 
-      const isAfterStart = !startDate || itemDate >= start;
-      const isBeforeEnd = !endDate || itemDate <= end;
+        const isAfterStart = !startDate || itemDate >= start;
+        const isBeforeEnd = !endDate || itemDate <= end;
 
-      return isAfterStart && isBeforeEnd;
-    });
+        return isAfterStart && isBeforeEnd;
+      });
 
-  setFilteredData(filtered);
-}, [searchDesc, startDate, endDate]);
+    setFilteredData(filtered);
+  }, [searchDesc, startDate, endDate]);
 
   return (
     <>
-    <br />
-    <br />
+      <br />
+      <br />
       <div className="flex flex-col sm:flex-row justify-between mb-4">
         {/* Pencarian berdasarkan DESC */}
         <div className="flex items-center mb-4 sm:mb-0">
@@ -862,254 +861,103 @@ function Sales() {
           </div>
         </div>
       </div>
-
-      {/* Judul "Stock GDM Update" */}
-      <h2 className="text-center text-2xl font-bold mb-4">
-        Detail Transaksi
-      </h2>
-
-      <div className="overflow-x-auto">
-        <table className="table-auto border-collapse border border-gray-300 w-full">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                No
-              </th>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                KODE_PPG
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                KODE_MPI
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                BULAN
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                TANGGAL
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                KODE_DISTRIBUTOR
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                KODE_OUTLET
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                KODE_PS
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                DISTRO
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                NO_FAKTUR
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                Kode GDM Reguler
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                DISCOUNT
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                DISC_DB
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                EKAT-SPC-GEN
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                INVOICED_QTY
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                TOTAL_HNA
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                V disc on GDM
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                V disc off GDM
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                NETT_VAL
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                NAMA OUTLET
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                ITEM_NAME
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                DIV_ITEM
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                PRINCIPAL
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                P_PROGRAM
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                Gugus
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                Net Disc
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                WE/EA
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                REG24
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                CAB
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                NAMA_PS
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                AREA
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                DIV_PS
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                MARK_DESC
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                GOV-PRV
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                AKD_AKL
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                ret/jual
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                CAB_GDM
-              </td>
-              <td className="border border-gray-300 px-4 py-2 text-center">
-                CATEGORY
-              </td>
+      <div className="flex justify-center">
+        {" "}
+        <h2 className="text-center text-2xl font-semibold my-4">
+          Detail Transaksi
+        </h2>
+      </div>
+      {/*Tabel Detail Transaksi*/}
+      <div className="overflow-x-auto bg-white shadow-md rounded-md">
+        <table className="min-w-full border border-gray-200 text-sm">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="px-3 py-1 border font-bold">No</th>
+              <th className="px-3 py-1 border font-bold">KODE_PPG</th>
+              <th className="px-3 py-1 border font-bold">KODE_MPI</th>
+              <th className="px-3 py-1 border font-bold">BULAN</th>
+              <th className="px-3 py-1 border font-bold">TANGGAL</th>
+              <th className="px-3 py-1 border font-bold">KODE_DISTRIBUTOR</th>
+              <th className="px-3 py-1 border font-bold">KODE_OUTLET</th>
+              <th className="px-3 py-1 border font-bold">KODE_PS</th>
+              <th className="px-3 py-1 border font-bold">DISTRO</th>
+              <th className="px-3 py-1 border font-bold">NO_FAKTUR</th>
+              <th className="px-3 py-1 border font-bold">Kode GDM Reguler</th>
+              <th className="px-3 py-1 border font-bold">DISCOUNT</th>
+              <th className="px-3 py-1 border font-bold">DISC_DB</th>
+              <th className="px-3 py-1 border font-bold">EKAT-SPC-GEN</th>
+              <th className="px-3 py-1 border font-bold">INVOICED_QTY</th>
+              <th className="px-3 py-1 border font-bold">TOTAL_HNA</th>
+              <th className="px-3 py-1 border font-bold">V disc on GDM</th>
+              <th className="px-3 py-1 border font-bold">V disc off GDM</th>
+              <th className="px-3 py-1 border font-bold">NETT_VAL</th>
+              <th className="px-3 py-1 border font-bold">NAMA OUTLET</th>
+              <th className="px-3 py-1 border font-bold">ITEM_NAME</th>
+              <th className="px-3 py-1 border font-bold">DIV_ITEM</th>
+              <th className="px-3 py-1 border font-bold">PRINCIPAL</th>
+              <th className="px-3 py-1 border font-bold">P_PROGRAM</th>
+              <th className="px-3 py-1 border font-bold">Gugus</th>
+              <th className="px-3 py-1 border font-bold">Net Disc</th>
+              <th className="px-3 py-1 border font-bold">WE/EA</th>
+              <th className="px-3 py-1 border font-bold">REG24</th>
+              <th className="px-3 py-1 border font-bold">CAB</th>
+              <th className="px-3 py-1 border font-bold">NAMA_PS</th>
+              <th className="px-3 py-1 border font-bold">AREA</th>
+              <th className="px-3 py-1 border font-bold">DIV_PS</th>
+              <th className="px-3 py-1 border font-bold">MARK_DESC</th>
+              <th className="px-3 py-1 border font-bold">GOV_PRV</th>
+              <th className="px-3 py-1 border font-bold">AKD_AKL</th>
+              <th className="px-3 py-1 border font-bold">ret/jual</th>
+              <th className="px-3 py-1 border font-bold">CAB_GDM</th>
+              <th className="px-3 py-1 border font-bold">CATEGORY</th>
             </tr>
           </thead>
           <tbody>
-          {filteredData.map((item, index) => (
-                <tr
-                  key={index}
-                  className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
-                >
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {index + 1}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.KODE_PPG}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.KODE_MPI}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.BULAN}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.TANGGAL}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.KODE_DISTRIBUTOR}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.KODE_OUTLET}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.KODE_PS}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.DISTRO}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.NO_FAKTUR}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["Kode GDM Reguler"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.DISCOUNT}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.DISC_DB}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["EKAT-SPC-GEN"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.INVOICED_QTY}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.TOTAL_HNA}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["V disc on GDM"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["V disc off GDM"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.NETT_VAL}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["NAMA OUTLET"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.ITEM_NAME}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.DIV_ITEM}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.PRINCIPAL}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.P_PROGRAM}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.Gugus}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["Net Disc"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["WE/EA"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.REG24}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.CAB}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.NAMA_PS}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.AREA}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.DIV_PS}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.MARK_DESC}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["GOV-PRV"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.AKD_AKL}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item["ret/jual"]}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.CAB_GDM}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {item.CATEGORY}
-                  </td>
-                </tr>
-              ))}
+            {filteredData.map((item, index) => (
+              <tr
+                key={index}
+                className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+              >
+                <td className="px-3 py-1 border">{index + 1}</td>
+                <td className="px-3 py-1 border">{item.KODE_PPG}</td>
+                <td className="px-3 py-1 border">{item.KODE_MPI}</td>
+                <td className="px-3 py-1 border">{item.BULAN}</td>
+                <td className="px-3 py-1 border">{item.TANGGAL}</td>
+                <td className="px-3 py-1 border">{item.KODE_DISTRIBUTOR}</td>
+                <td className="px-3 py-1 border">{item.KODE_OUTLET}</td>
+                <td className="px-3 py-1 border">{item.KODE_PS}</td>
+                <td className="px-3 py-1 border">{item.DISTRO}</td>
+                <td className="px-3 py-1 border">{item.NO_FAKTUR}</td>
+                <td className="px-3 py-1 border">{item.Kode_GDM_Reguler}</td>
+                <td className="px-3 py-1 border">{item.DISCOUNT}</td>
+                <td className="px-3 py-1 border">{item.DISC_DB}</td>
+                <td className="px-3 py-1 border">{item.EKAT_SPC_GEN}</td>
+                <td className="px-3 py-1 border">{item.INVOICED_QTY}</td>
+                <td className="px-3 py-1 border">{item.TOTAL_HNA}</td>
+                <td className="px-3 py-1 border">{item.V_disc_on_GDM}</td>
+                <td className="px-3 py-1 border">{item.V_disc_off_GDM}</td>
+                <td className="px-3 py-1 border">{item.NETT_VAL}</td>
+                <td className="px-3 py-1 border">{item.NAMA_OUTLET}</td>
+                <td className="px-3 py-1 border">{item.ITEM_NAME}</td>
+                <td className="px-3 py-1 border">{item.DIV_ITEM}</td>
+                <td className="px-3 py-1 border">{item.PRINCIPAL}</td>
+                <td className="px-3 py-1 border">{item.P_PROGRAM}</td>
+                <td className="px-3 py-1 border">{item.Gugus}</td>
+                <td className="px-3 py-1 border">{item.Net_Disc}</td>
+                <td className="px-3 py-1 border">{item.WE_EA}</td>
+                <td className="px-3 py-1 border">{item.REG24}</td>
+                <td className="px-3 py-1 border">{item.CAB}</td>
+                <td className="px-3 py-1 border">{item.NAMA_PS}</td>
+                <td className="px-3 py-1 border">{item.AREA}</td>
+                <td className="px-3 py-1 border">{item.DIV_PS}</td>
+                <td className="px-3 py-1 border">{item.MARK_DESC}</td>
+                <td className="px-3 py-1 border">{item.GOV_PRV}</td>
+                <td className="px-3 py-1 border">{item.AKD_AKL}</td>
+                <td className="px-3 py-1 border">{item.ret_jual}</td>
+                <td className="px-3 py-1 border">{item.CAB_GDM}</td>
+                <td className="px-3 py-1 border">{item.CATEGORY}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

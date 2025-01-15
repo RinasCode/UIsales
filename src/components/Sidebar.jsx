@@ -133,7 +133,7 @@ const Sidebar = () => {
                   </li>
                   <li>
                     <a
-                      href="/sales_update_ps"
+                      href="/sales_history"
                       className="block p-2 rounded hover:bg-gray-700"
                     >
                       Sales History
@@ -141,7 +141,7 @@ const Sidebar = () => {
                   </li>
                   <li>
                     <a
-                      href="/resume"
+                      href="/sales_target"
                       className="block p-2 rounded hover:bg-gray-700"
                     >
                       Sales Target
