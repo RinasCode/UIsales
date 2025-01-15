@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function SalesUpdatePs() {
+function SalesHistoryPs() {
   const data = [
     {
       KODE_PPG: "A60214",
@@ -112,12 +112,12 @@ function SalesUpdatePs() {
 
   return (
     <>
-      <div className="flex gap-4">
-      <div className="w-1/2 p-4">
+      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="w-full lg:w-1/2 p-4">
         {/* Filter Section */}
         <div className="flex flex-col sm:flex-row sm:space-x-4">
           <div className="w-full sm:w-1/2 flex-grow p-4">
-            <label className="mr-2">Start Date:</label>
+            <label className="mr-2">Bulan dan tahun:</label>
             <input
               type="month"
               value={startDate}
@@ -155,7 +155,7 @@ function SalesUpdatePs() {
         </div>
         </div>
         {/* Sales Info Card Section */}
-        <div className="w-1/2 p-4">
+        <div className="w-full lg:w-1/2 p-4">
           <div className="bg-white rounded-lg shadow-lg p-4 grid grid-cols-2 gap-4 h-full">
             <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg shadow-md">
               <i className="fas fa-bullseye text-blue-600 text-2xl"></i>
@@ -289,4 +289,4 @@ function SalesUpdatePs() {
   );
 }
 
-export default SalesUpdatePs;
+export default SalesHistoryPs;

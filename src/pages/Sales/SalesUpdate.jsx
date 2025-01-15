@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import MonthYearPicker from "../../components/MonthYearPicker";
 
 function SalesUpdate() {
   const data = [
@@ -87,6 +86,7 @@ function SalesUpdate() {
   const [ps, setPs] = useState("");
   const [month, setMonth] = useState("");
   const [filteredData, setFilteredData] = useState(data);
+  const [startDate, setStartDate] = useState("");
 
   const areas = ["WEST", "EAST"];
   const regions = {
@@ -107,12 +107,10 @@ function SalesUpdate() {
   useEffect(() => {
     let filtered = data;
 
-    // Filter data berdasarkan bulan yang dipilih
     if (month) {
       filtered = filtered.filter((item) => item.BULAN === month);
     }
 
-    // Filter berdasarkan area, region, branch, dan ps
     if (area) {
       filtered = filtered.filter((item) => item.AREA === area);
     }
@@ -129,13 +127,24 @@ function SalesUpdate() {
     setFilteredData(filtered);
   }, [area, region, branch, ps, month]);
 
+  const handleStartDateChange = (e) => {
+    setStartDate(e.target.value);
+  };
+
   return (
     <>
-      <div className="flex gap-4">
-        {/* Filter Section and Sales Info Card Section (stay side by side) */}
-        <div className="w-1/2 p-4">
-          <div className="datepicker overflow-hidden">
-            <MonthYearPicker setMonth={setMonth} />
+      <div className="flex flex-col lg:flex-row gap-4">
+        {/* Filter Section */}
+        <div className="w-full lg:w-1/2 p-4">
+          {/* Filter Form Content */}
+          <div>
+            <label className="mr-2">Bulan dan tahun:</label>
+            <input
+              type="month"
+              value={startDate}
+              onChange={handleStartDateChange}
+              className="input input-bordered mb-4"
+            />
           </div>
           <div>
             <label htmlFor="area" className="block font-semibold text-sm">
@@ -227,7 +236,7 @@ function SalesUpdate() {
         </div>
 
         {/* Sales Info Card Section */}
-        <div className="w-1/2 p-4">
+        <div className="w-full lg:w-1/2 p-4">
           <div className="bg-white rounded-lg shadow-lg p-4 grid grid-cols-2 gap-4 h-full">
             <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg shadow-md">
               <i className="fas fa-bullseye text-blue-600 text-2xl"></i>

@@ -390,14 +390,6 @@ const Sidebar = () => {
                 <ul className="mt-2 ml-4 space-y-2">
                   <li>
                     <a
-                      href="/sales"
-                      className="block p-2 rounded hover:bg-gray-700"
-                    >
-                      Upload Sales
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="/sales_update_ps"
                       className="block p-2 rounded hover:bg-gray-700"
                     >
@@ -406,7 +398,7 @@ const Sidebar = () => {
                   </li>
                   <li>
                     <a
-                      href="/sales_update_ps"
+                      href="/sales_history_ps"
                       className="block p-2 rounded hover:bg-gray-700"
                     >
                       Sales History

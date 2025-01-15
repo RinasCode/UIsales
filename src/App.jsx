@@ -27,8 +27,8 @@ import FormPE from "./pages/PE/FormPE";
 import DaftarOutlet from "./pages/Outlet/DaftarOutlet";
 import DaftarPS from "./pages/PS/DaftarPS";
 import SalesUpdate from "./pages/Sales/SalesUpdate";
-import MonthYearPicker from "./components/MonthYearPicker";
 import SalesUpdatePs from "./pages/Sales/SalesUpdatePs";
+import SalesHistoryPs from "./pages/Sales/SalesHistoryPs";
 
 function App() {
   return (
@@ -268,7 +268,15 @@ function App() {
             </BaseLayout>
           }
         />
-        
+
+        <Route
+          path="/sales_history_ps"
+          element={
+            <BaseLayout>
+              <SalesHistoryPs />
+            </BaseLayout>
+          }
+        />
       </Routes>
     </Router>
   );
