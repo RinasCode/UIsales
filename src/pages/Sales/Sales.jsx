@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+ import React, { useEffect, useState } from "react";
 
 function Sales() {
   const [ppgFile, setPpgFile] = useState(null);
@@ -824,8 +824,7 @@ function Sales() {
 
   return (
     <>
-      <br />
-      <br />
+      <div className="p-6 bg-gray-50 min-h-screen">
       <div className="flex flex-col sm:flex-row justify-between mb-4">
         {/* Pencarian berdasarkan DESC */}
         <div className="flex items-center mb-4 sm:mb-0">
@@ -1086,6 +1085,7 @@ function Sales() {
           </form>
         </div>
       </dialog>
+      </div>
     </>
   );
 }

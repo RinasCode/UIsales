@@ -4,123 +4,143 @@ function SalesHistory() {
   const data = [
     {
       KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-09",
+      TANGGAL: "2025-01-03",
       NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
       PRINCIPAL: "PETERS",
       MARK_DESC: "GOVERNMENT",
-      JOB_TITLE: "PS",
-      DIVISION: "MC",
-      OUTLET: "Outlet A",
-      PERSONAL: "Tuti",
+      AREA: "WEST",
+      REGION: "ALFA",
+      CABANG: "JKT-01",
+      AREA_CABANG: "PS-JKT01-HC-562",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
       NETT_VAL: 11704500,
     },
     {
       KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-10",
-      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "TROGE",
-      MARK_DESC: "PRIVATE",
-      JOB_TITLE: "DM",
-      DIVISION: "HC",
-      OUTLET: "Outlet B",
-      PERSONAL: "Handayani",
-      NETT_VAL: 13004500,
-    },
-    {
-      KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-11",
-      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "ALSHTROM",
-      MARK_DESC: "GOVERNMENT",
-      JOB_TITLE: "SM",
-      DIVISION: "MIX",
-      OUTLET: "Outlet C",
-      PERSONAL: "Maryati",
-      NETT_VAL: 20000000,
-    },
-    {
-      KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-12",
-      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "PETERS CVT",
-      MARK_DESC: "PRIVATE",
-      JOB_TITLE: "GM",
-      DIVISION: "MC",
-      OUTLET: "Outlet A",
-      PERSONAL: "Tuti",
-      NETT_VAL: 15000000,
-    },
-    {
-      KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-13",
-      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "MEDIPRO",
-      MARK_DESC: "PRIVATE",
-      JOB_TITLE: "DM",
-      DIVISION: "HC",
-      OUTLET: "Outlet D",
-      PERSONAL: "Handayani",
-      NETT_VAL: 18000000,
-    },
-    {
-      KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-14",
-      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "TROGE",
-      MARK_DESC: "GOVERNMENT",
-      JOB_TITLE: "PS",
-      DIVISION: "HC",
-      OUTLET: "Outlet B",
-      PERSONAL: "Maryati",
-      NETT_VAL: 12000000,
-    },
-    {
-      KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-15",
-      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "ALSHTROM",
-      MARK_DESC: "PRIVATE",
-      JOB_TITLE: "SM",
-      DIVISION: "MC",
-      OUTLET: "Outlet C",
-      PERSONAL: "Tuti",
-      NETT_VAL: 11000000,
-    },
-    {
-      KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-16",
+      TANGGAL: "2025-01-04",
       NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
       PRINCIPAL: "PETERS",
       MARK_DESC: "GOVERNMENT",
-      JOB_TITLE: "GM",
-      DIVISION: "MIX",
-      OUTLET: "Outlet D",
-      PERSONAL: "Handayani",
-      NETT_VAL: 19000000,
+      AREA: "WEST",
+      REGION: "ALFA",
+      CABANG: "JKT-01",
+      AREA_CABANG: "PS-JKT01-HC-562",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
+      NETT_VAL: 11704500,
     },
     {
       KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-17",
+      TANGGAL: "2025-01-05",
       NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "PETERS CVT",
-      MARK_DESC: "PRIVATE",
-      JOB_TITLE: "DM",
-      DIVISION: "HC",
-      OUTLET: "Outlet A",
-      PERSONAL: "Maryati",
-      NETT_VAL: 16000000,
-    },
-    {
-      KODE_GDM: "2TRG3WAYS",
-      TANGGAL: "2024-12-18",
-      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
-      PRINCIPAL: "MEDIPRO",
+      PRINCIPAL: "PETERS",
       MARK_DESC: "GOVERNMENT",
-      JOB_TITLE: "PS",
-      DIVISION: "MC",
-      OUTLET: "Outlet B",
-      PERSONAL: "Tuti",
-      NETT_VAL: 12500000,
+      AREA: "WEST",
+      REGION: "ALFA",
+      CABANG: "JKT-01",
+      AREA_CABANG: "PS-JKT01-MC-563",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
+      NETT_VAL: 11704500,
+    },
+    {
+      KODE_GDM: "2TRG3WAYS",
+      TANGGAL: "2025-01-06",
+      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
+      PRINCIPAL: "PETERS",
+      MARK_DESC: "GOVERNMENT",
+      AREA: "WEST",
+      REGION: "ALFA",
+      CABANG: "JKT-01",
+      AREA_CABANG: "PS-JKT01-MC-563",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
+      NETT_VAL: 11704500,
+    },
+    {
+      KODE_GDM: "2TRG3WAYS",
+      TANGGAL: "2025-01-07",
+      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
+      PRINCIPAL: "PETERS",
+      MARK_DESC: "GOVERNMENT",
+      AREA: "WEST",
+      REGION: "ALFA",
+      CABANG: "JKT-01",
+      AREA_CABANG: "PS-JKT01-MC-563",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
+      NETT_VAL: 11704500,
+    },
+    {
+      KODE_GDM: "2TRG3WAYS",
+      TANGGAL: "2025-01-08",
+      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
+      PRINCIPAL: "PETERS",
+      MARK_DESC: "GOVERNMENT",
+      AREA: "EAST",
+      REGION: "GAMMA",
+      CABANG: "JKT-02",
+      AREA_CABANG: "PS-JKT02-HC-462",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
+      NETT_VAL: 11704500,
+    },
+    {
+      KODE_GDM: "2TRG3WAYS",
+      TANGGAL: "2025-01-09",
+      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
+      PRINCIPAL: "PETERS",
+      MARK_DESC: "GOVERNMENT",
+      AREA: "EAST",
+      REGION: "GAMMA",
+      CABANG: "JKT-02",
+      AREA_CABANG: "PS-JKT02-HC-462",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
+      NETT_VAL: 11704500,
+    },
+    {
+      KODE_GDM: "2TRG3WAYS",
+      TANGGAL: "2025-01-10",
+      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
+      PRINCIPAL: "PETERS",
+      MARK_DESC: "GOVERNMENT",
+      AREA: "EAST",
+      REGION: "GAMMA",
+      CABANG: "JKT-02",
+      AREA_CABANG: "PS-JKT02-MC-463",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Vacant",
+      NETT_VAL: 11704500,
+    },
+    {
+      KODE_GDM: "2TRG3WAYS",
+      TANGGAL: "2025-01-11",
+      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
+      PRINCIPAL: "PETERS",
+      MARK_DESC: "GOVERNMENT",
+      AREA: "EAST",
+      REGION: "GAMMA",
+      CABANG: "JKT-02",
+      AREA_CABANG: "PS-JKT02-MC-463",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "vacant",
+      NETT_VAL: 11704500,
+    },
+    {
+      KODE_GDM: "2TRG3WAYS",
+      TANGGAL: "2025-01-12",
+      NAMA_ITEM: "TRO-VENOFLOW 3-WAY-2TRG3WAYS",
+      PRINCIPAL: "PETERS",
+      MARK_DESC: "GOVERNMENT",
+      AREA: "EAST",
+      REGION: "GAMMA",
+      CABANG: "JKT-02",
+      AREA_CABANG: "PS-JKT02-MC-462",
+      OUTLET: "RS Ananda",
+      NAMA_PS: "Fitriani",
+      NETT_VAL: 11704500,
     },
   ];
 
@@ -129,8 +149,11 @@ function SalesHistory() {
     endDate: "",
     producer: "All",
     market: "All",
-    jobTitle: "All",
-    division: "All",
+    area: "All",
+    region: "All",
+    cabang: "All",
+    area_cabang: "All",
+    nama_ps: "All",
     outlet: "All",
     personal: "All",
   });
@@ -156,17 +179,23 @@ function SalesHistory() {
     if (filters.market !== "All") {
       filtered = filtered.filter((item) => item.MARK_DESC === filters.market);
     }
-    if (filters.jobTitle !== "All") {
-      filtered = filtered.filter((item) => item.JOB_TITLE === filters.jobTitle);
+    if (filters.area !== "All") {
+      filtered = filtered.filter((item) => item.AREA === filters.area);
     }
-    if (filters.division !== "All") {
-      filtered = filtered.filter((item) => item.DIVISION === filters.division);
+    if (filters.region !== "All") {
+      filtered = filtered.filter((item) => item.REGION === filters.region);
+    }
+    if (filters.cabang !== "All") {
+      filtered = filtered.filter((item) => item.CABANG === filters.cabang);
+    }
+    if (filters.area_cabang !== "All") {
+      filtered = filtered.filter((item) => item.AREA_CABANG === filters.area_cabang);
     }
     if (filters.outlet !== "All") {
       filtered = filtered.filter((item) => item.OUTLET === filters.outlet);
     }
-    if (filters.personal !== "All") {
-      filtered = filtered.filter((item) => item.PERSONAL === filters.personal);
+    if (filters.nama_ps !== "All") {
+      filtered = filtered.filter((item) => item.NAMA_PS === filters.nama_ps);
     }
 
     setFilteredData(filtered);
@@ -235,32 +264,59 @@ function SalesHistory() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Job Title:</label>
+            <label className="block text-sm font-medium mb-1">Area:</label>
             <select
-              name="jobTitle"
-              value={filters.jobTitle}
+              name="area"
+              value={filters.area}
               onChange={handleFilterChange}
               className="select select-bordered w-full"
             >
               <option>All</option>
-              <option>PS</option>
-              <option>DM</option>
-              <option>SM</option>
-              <option>GM</option>
+              <option>EAST</option>
+              <option>WEST</option>
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Division:</label>
+            <label className="block text-sm font-medium mb-1">Region:</label>
             <select
-              name="division"
-              value={filters.division}
+              name="region"
+              value={filters.region}
               onChange={handleFilterChange}
               className="select select-bordered w-full"
             >
               <option>All</option>
-              <option>HC</option>
-              <option>MC</option>
-              <option>MIX</option>
+              <option>ALFA</option>
+              <option>GAMMA</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">CABANG :</label>
+            <select
+              name="cabang"
+              value={filters.cabang}
+              onChange={handleFilterChange}
+              className="select select-bordered w-full"
+            >
+              <option>All</option>
+              <option>JKT-01</option>
+              <option>JKT-02</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              AREA CABANG :
+            </label>
+            <select
+              name="area_cabang"
+              value={filters.area_cabang}
+              onChange={handleFilterChange}
+              className="select select-bordered w-full"
+            >
+              <option>All</option>
+              <option>PS-JKT01-HC-562</option>
+              <option>PS-JKT01-MC-563</option>
+              <option>PS-JKT02-HC-462</option>
+              <option>PS-JKT02-MC-463</option>
             </select>
           </div>
           <div>
@@ -272,16 +328,16 @@ function SalesHistory() {
               className="select select-bordered w-full"
             >
               <option>All</option>
-              <option>Outlet A</option>
-              <option>Outlet B</option>
-              <option>Outlet C</option>
+              <option>RS Ananda</option>
+              <option>RS Jakarta</option>
+              <option>RSUD Cibinong</option>
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Personal:</label>
+            <label className="block text-sm font-medium mb-1">Nama PS:</label>
             <select
-              name="personal"
-              value={filters.personal}
+              name="nama_ps"
+              value={filters.NAMA_PS}
               onChange={handleFilterChange}
               className="select select-bordered w-full"
             >
@@ -304,10 +360,12 @@ function SalesHistory() {
               <th className="px-4 py-2 border">Nama Outlet</th>
               <th className="px-4 py-2 border">Principal</th>
               <th className="px-4 py-2 border">Market</th>
-              <th className="px-4 py-2 border">Job Title</th>
-              <th className="px-4 py-2 border">Division</th>
+              <th className="px-4 py-2 border">Area</th>
+              <th className="px-4 py-2 border">Region</th>
+              <th className="px-4 py-2 border">Cabang</th>
+              <th className="px-4 py-2 border">Area Cabang</th>
               <th className="px-4 py-2 border">Outlet</th>
-              <th className="px-4 py-2 border">Personal</th>
+              <th className="px-4 py-2 border">Nama PS</th>
               <th className="px-4 py-2 border">Nett Value</th>
             </tr>
           </thead>
@@ -319,10 +377,12 @@ function SalesHistory() {
                 <td className="px-4 py-2 border">{item.NAMA_ITEM}</td>
                 <td className="px-4 py-2 border">{item.PRINCIPAL}</td>
                 <td className="px-4 py-2 border">{item.MARK_DESC}</td>
-                <td className="px-4 py-2 border">{item.JOB_TITLE}</td>
-                <td className="px-4 py-2 border">{item.DIVISION}</td>
+                <td className="px-4 py-2 border">{item.AREA}</td>
+                <td className="px-4 py-2 border">{item.REGION}</td>
+                <td className="px-4 py-2 border">{item.CABANG}</td>
+                <td className="px-4 py-2 border">{item.AREA_CABANG}</td>
                 <td className="px-4 py-2 border">{item.OUTLET}</td>
-                <td className="px-4 py-2 border">{item.PERSONAL}</td>
+                <td className="px-4 py-2 border">{item.NAMA_PS}</td>
                 <td className="px-4 py-2 border">{item.NETT_VAL}</td>
               </tr>
             ))}
