@@ -87,7 +87,7 @@ function SalesUpdateGm() {
   const [filteredData, setFilteredData] = useState(data);
   const [startDate, setStartDate] = useState("");
 
-  const regions = ["R1-SAFIR", "R2-SAFIR", "R1-EAST", "R2-EAST"];
+  const regions = ["R1-SAFIR", "R2-SAFIR"];
 
   const branches = {
     "R1-SAFIR": ["BTM-01", "BTM-02"],
