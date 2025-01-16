@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import * as XLSX from "xlsx";
 
 function SalesHistory() {
   const data = [
@@ -189,7 +190,9 @@ function SalesHistory() {
       filtered = filtered.filter((item) => item.CABANG === filters.cabang);
     }
     if (filters.area_cabang !== "All") {
-      filtered = filtered.filter((item) => item.AREA_CABANG === filters.area_cabang);
+      filtered = filtered.filter(
+        (item) => item.AREA_CABANG === filters.area_cabang
+      );
     }
     if (filters.outlet !== "All") {
       filtered = filtered.filter((item) => item.OUTLET === filters.outlet);
@@ -204,6 +207,15 @@ function SalesHistory() {
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "SalesHistory");
+
+    // Export to Excel file
+    XLSX.writeFile(workbook, "SalesHistory.xlsx");
   };
 
   return (
@@ -337,7 +349,7 @@ function SalesHistory() {
             <label className="block text-sm font-medium mb-1">Nama PS:</label>
             <select
               name="nama_ps"
-              value={filters.NAMA_PS}
+              value={filters.nama_ps}
               onChange={handleFilterChange}
               className="select select-bordered w-full"
             >
@@ -347,11 +359,24 @@ function SalesHistory() {
               <option>Maryati</option>
             </select>
           </div>
+
+          {/* Download Button */}
+          <div className="col-span-full flex justify-end mt-4">
+            <button
+              onClick={downloadExcel}
+              className="btn btn-primary px-6 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              Download to Excel
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Data Table */}
       <div className="overflow-x-auto bg-white shadow-md rounded-md">
+        <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center mt-3">
+          History Sellout
+        </h2>
         <table className="min-w-full border border-gray-200">
           <thead className="bg-gray-100">
             <tr>

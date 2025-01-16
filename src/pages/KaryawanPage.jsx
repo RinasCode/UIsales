@@ -342,8 +342,7 @@ function Karyawan() {
 
   return (
     <>
-      <br />
-      <br />
+      <div className="p-6 bg-gray-50 min-h-screen">
       <div className="flex flex-col sm:flex-row justify-between mb-6">
         {/* Pencarian berdasarkan DESC */}
         <div className="flex items-center mb-4 sm:mb-0">
@@ -469,6 +468,7 @@ function Karyawan() {
             }
           </tbody>
         </table>
+      </div>
       </div>
     </>
   );

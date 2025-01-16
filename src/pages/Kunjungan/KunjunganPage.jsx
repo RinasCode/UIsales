@@ -454,7 +454,7 @@ function Kunjungan() {
   const calculateWeeklyStats = (users) => {
     const weeks = {};
     users.forEach((user) => {
-      const weekNumber = getWeekNumber(new Date(user.tanggal)); 
+      const weekNumber = getWeekNumber(new Date(user.tanggal));
       const psName = user.nama_ps;
 
       if (!weeks[weekNumber]) {
@@ -471,15 +471,15 @@ function Kunjungan() {
   };
 
   const getWeekNumber = (date) => {
-    const startDate = new Date(date.getFullYear(), 0, 1); 
-    const diff = date - startDate; 
-    const oneDay = 1000 * 60 * 60 * 24; 
-    const dayOfYear = Math.floor(diff / oneDay); 
+    const startDate = new Date(date.getFullYear(), 0, 1);
+    const diff = date - startDate;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
 
     if (dayOfYear <= 4) {
-      return 1; 
+      return 1;
     } else {
-      return Math.ceil((dayOfYear - 4) / 7) + 1; 
+      return Math.ceil((dayOfYear - 4) / 7) + 1;
     }
   };
 
@@ -508,7 +508,6 @@ function Kunjungan() {
   const weeklyStats = calculateWeeklyStats(filteredUsers);
 
   const handleDownload = () => {
-
     const updatedUsers = filteredUsers.map((user) => ({
       ...user,
       target_kunjungan_harian:
@@ -540,175 +539,177 @@ function Kunjungan() {
   };
 
   return (
-    <div>
-      <h2 className="text-center text-2xl font-bold mb-2 mt-4">
-        DAFTAR KUNJUNGAN
-      </h2>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <div>
+        <h2 className="text-center text-2xl font-bold mb-2 mt-4">
+          DAFTAR KUNJUNGAN
+        </h2>
 
-      {/* Filter */}
-      <div className="flex flex-col md:flex-row justify-between mb-4">
-        <div className="flex items-center space-x-4">
-          <input
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-            className="border p-2 rounded"
-          />
-          <input
-            type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            className="border p-2 rounded"
-          />
+        {/* Filter */}
+        <div className="flex flex-col md:flex-row justify-between mb-4">
+          <div className="flex items-center space-x-4">
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className="border p-2 rounded"
+            />
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className="border p-2 rounded"
+            />
+          </div>
         </div>
-      </div>
 
-      <select
-        value={filterCabang}
-        onChange={(e) => setFilterCabang(e.target.value)}
-        className="border border-gray-300 px-4 py-2"
-      >
-        <option value="">Semua Cabang</option>
-        <option value="JKT-01 FATMAWATI">JKT-01 FATMAWATI</option>
-        <option value="JKT-02 RAWAMANGUN">JKT-02 RAWAMANGUN</option>
-        <option value="JKT-03 HARKIT">JKT-03 HARKIT</option>
-      </select>
+        <select
+          value={filterCabang}
+          onChange={(e) => setFilterCabang(e.target.value)}
+          className="border border-gray-300 px-4 py-2"
+        >
+          <option value="">Semua Cabang</option>
+          <option value="JKT-01 FATMAWATI">JKT-01 FATMAWATI</option>
+          <option value="JKT-02 RAWAMANGUN">JKT-02 RAWAMANGUN</option>
+          <option value="JKT-03 HARKIT">JKT-03 HARKIT</option>
+        </select>
 
-      <input
-        type="text"
-        placeholder="Search by Nama PS"
-        value={filterNamaPS}
-        onChange={(e) => setFilterNamaPS(e.target.value)}
-        className="border border-gray-300 px-4 py-2 ml-4"
-      />
+        <input
+          type="text"
+          placeholder="Search by Nama PS"
+          value={filterNamaPS}
+          onChange={(e) => setFilterNamaPS(e.target.value)}
+          className="border border-gray-300 px-4 py-2 ml-4"
+        />
 
-      <button
-        onClick={handleDownload}
-        className="bg-blue-500 text-white px-4 py-2 rounded ml-4 mb-4"
-      >
-        Download Excel
-      </button>
+        <button
+          onClick={handleDownload}
+          className="bg-blue-500 text-white px-4 py-2 rounded ml-4 mb-4"
+        >
+          Download Excel
+        </button>
 
-      {/* Tabel User */}
-      <div className="overflow-x-auto">
-        <table className="table-auto border-collapse border border-gray-300 w-full">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                No
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Tanggal
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Nama PS
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Cabang
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Total Kunjungan
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Total Jam Kunjungan
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Target Jam Kunjungan Harian
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredUsers.map((user, index) => (
-              <tr
-                key={index}
-                className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
-              >
-                <td className="border border-gray-300 px-4 py-2 text-center">
-                  {index + 1}
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-center">
-                  {user.tanggal}
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-center">
-                  {user.nama_ps}
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-center">
-                  {user.cabang}
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-center">
-                  {user.total_kunjungan}
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-center">
-                  {user.total_jam_kunjungan}
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-center">
-                  {user.total_jam_kunjungan >= 6
-                    ? "Tercapai"
-                    : `Kurang ${6 - user.total_jam_kunjungan} jam`}
-                </td>
+        {/* Tabel User */}
+        <div className="overflow-x-auto">
+          <table className="table-auto border-collapse border border-gray-300 w-full">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  No
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Tanggal
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Nama PS
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Cabang
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Total Kunjungan
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Total Jam Kunjungan
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Target Jam Kunjungan Harian
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Weekly Stats */}
-      <div className="mt-6">
-        <h3 className="font-semibold">Total Stats per Week</h3>
-        <table className="table-auto border-collapse border border-gray-300 w-full mt-4 mb-10">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Minggu
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Nama PS
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Total Kunjungan
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Total Jam Kunjungan
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Target Kunjungan
-              </th>
-              <th className="border border-gray-300 px-4 py-2 text-center">
-                Target Jam
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(weeklyStats).map(([weekNumber, stats]) =>
-              Object.entries(stats).map(([psName, psStats]) => (
-                <tr key={`${weekNumber}-${psName}`}>
+            </thead>
+            <tbody>
+              {filteredUsers.map((user, index) => (
+                <tr
+                  key={index}
+                  className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                >
                   <td className="border border-gray-300 px-4 py-2 text-center">
-                    {weekNumber}
+                    {index + 1}
                   </td>
                   <td className="border border-gray-300 px-4 py-2 text-center">
-                    {psName}
+                    {user.tanggal}
                   </td>
                   <td className="border border-gray-300 px-4 py-2 text-center">
-                    {psStats.totalVisits >= 8
+                    {user.nama_ps}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2 text-center">
+                    {user.cabang}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2 text-center">
+                    {user.total_kunjungan}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2 text-center">
+                    {user.total_jam_kunjungan}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2 text-center">
+                    {user.total_jam_kunjungan >= 6
                       ? "Tercapai"
-                      : `Kurang ${8 - psStats.totalVisits}`}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    {psStats.totalHours >= 40
-                      ? "Tercapai"
-                      : `Kurang ${40 - psStats.totalHours} jam`}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    8
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
-                    40
+                      : `Kurang ${6 - user.total_jam_kunjungan} jam`}
                   </td>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Weekly Stats */}
+        <div className="mt-6">
+          <h3 className="font-semibold">Total Stats per Week</h3>
+          <table className="table-auto border-collapse border border-gray-300 w-full mt-4 mb-10">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Minggu
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Nama PS
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Total Kunjungan
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Total Jam Kunjungan
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Target Kunjungan
+                </th>
+                <th className="border border-gray-300 px-4 py-2 text-center">
+                  Target Jam
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(weeklyStats).map(([weekNumber, stats]) =>
+                Object.entries(stats).map(([psName, psStats]) => (
+                  <tr key={`${weekNumber}-${psName}`}>
+                    <td className="border border-gray-300 px-4 py-2 text-center">
+                      {weekNumber}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2 text-center">
+                      {psName}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2 text-center">
+                      {psStats.totalVisits >= 8
+                        ? "Tercapai"
+                        : `Kurang ${8 - psStats.totalVisits}`}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2 text-center">
+                      {psStats.totalHours >= 40
+                        ? "Tercapai"
+                        : `Kurang ${40 - psStats.totalHours} jam`}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2 text-center">
+                      8
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2 text-center">
+                      40
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

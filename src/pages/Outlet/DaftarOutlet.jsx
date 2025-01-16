@@ -158,6 +158,7 @@ function DaftarOutlet() {
 
   return (
     <>
+    <div className="p-6 bg-gray-50 min-h-screen">
       <h1 className="text-2xl font-semibold text-center w-full mt-6">
         DAFTAR OUTLET
       </h1>
@@ -293,6 +294,7 @@ function DaftarOutlet() {
           </div>
         </div>
       )}
+      </div>
     </>
   );
 }

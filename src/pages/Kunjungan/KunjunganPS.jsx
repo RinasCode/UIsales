@@ -65,6 +65,7 @@ function KunjunganPs() {
 
   return (
     <>
+    <div className="p-6 bg-gray-50 min-h-screen">
       <div>
         <h2 className="text-center text-2xl font-bold mb-2 mt-4">
           DAFTAR KUNJUNGAN PS
@@ -248,6 +249,7 @@ function KunjunganPs() {
           </div>
         </div>
       )}
+      </div>
     </>
   );
 }
