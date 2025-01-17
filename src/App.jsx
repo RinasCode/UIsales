@@ -34,6 +34,8 @@ import SalesTarget from "./pages/Sales/SalesTarget";
 import SalesReport from "./pages/Sales/SalesReport";
 import UploadStock from "./pages/Stock/UploadStockPage";
 import SalesUpdateGm from "./pages/Sales/SalesUpdateGm";
+import SalesUpdateSm from "./pages/Sales/SalesUpdateSm";
+import SalesUpdateDm from "./pages/Sales/SalesUpdateDm";
 
 function App() {
   return (
@@ -320,6 +322,24 @@ function App() {
           element={
             <BaseLayout>
               <SalesUpdateGm />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/sales_update_sm"
+          element={
+            <BaseLayout>
+              <SalesUpdateSm />
+            </BaseLayout>
+          }
+        />
+
+        <Route
+          path="/sales_update_dm"
+          element={
+            <BaseLayout>
+              <SalesUpdateDm />
             </BaseLayout>
           }
         />

@@ -329,7 +329,15 @@ const Sidebar = () => {
                 <ul className="mt-2 ml-4 space-y-2">
                   <li>
                     <a
-                      href="/sales_update_gm"
+                      href={
+                        role === "GM"
+                          ? "/sales_update_gm"
+                          : role === "SM"
+                          ? "/sales_update_sm"
+                          : role === "DM"
+                          ? "/sales_update_dm"
+                          : "#"
+                      }
                       className="block p-2 rounded hover:bg-gray-700"
                     >
                       Sales Update

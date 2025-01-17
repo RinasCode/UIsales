@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function SalesUpdateGm() {
+function SalesUpdateSm() {
   const data = [
     {
       KODE_PPG: "A60214",
@@ -80,21 +80,14 @@ function SalesUpdateGm() {
     },
   ];
 
-  const [region, setRegion] = useState("");
   const [branch, setBranch] = useState("");
   const [ps, setPs] = useState("");
   const [month, setMonth] = useState("");
   const [filteredData, setFilteredData] = useState(data);
   const [startDate, setStartDate] = useState("");
 
-  const regions = ["R1-SAFIR", "R2-SAFIR"];
+  const branches = ["BTM-01", "BTM-02"];
 
-  const branches = {
-    "R1-SAFIR": ["BTM-01", "BTM-02"],
-    "R2-SAFIR": ["BTM-01", "BTM-02"],
-    "R1-EAST": ["EAST-01", "EAST-02"],
-    "R2-EAST": ["EAST-01", "EAST-02"],
-  };
   const psOptions = {
     "BTM-01": ["Khaidir Ramadhan", "Ali Ramadhan"],
     "BTM-02": ["Siti Ramadhan", "Dewi Ramadhan"],
@@ -106,9 +99,6 @@ function SalesUpdateGm() {
     if (month) {
       filtered = filtered.filter((item) => item.BULAN === month);
     }
-    if (region) {
-      filtered = filtered.filter((item) => item.REG24 === region);
-    }
     if (branch) {
       filtered = filtered.filter((item) => item.CAB === branch);
     }
@@ -117,7 +107,7 @@ function SalesUpdateGm() {
     }
 
     setFilteredData(filtered);
-  }, [region, branch, ps, month]);
+  }, [branch, ps, month]);
 
   const handleStartDateChange = (e) => {
     setStartDate(e.target.value);
@@ -141,49 +131,25 @@ function SalesUpdateGm() {
 
           <div>
             <label
-              htmlFor="region"
+              htmlFor="branch"
               className="block font-semibold text-sm mt-3"
             >
-              Region:
+              Branch:
             </label>
             <select
-              id="region"
-              value={region}
-              onChange={(e) => setRegion(e.target.value)}
+              id="branch"
+              value={branch}
+              onChange={(e) => setBranch(e.target.value)}
               className="border p-2 w-full rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
-              <option value="">Select Region</option>
-              {regions.map((region, index) => (
-                <option key={index} value={region}>
-                  {region}
+              <option value="">Select Branch</option>
+              {branches.map((branch, index) => (
+                <option key={index} value={branch}>
+                  {branch}
                 </option>
               ))}
             </select>
           </div>
-
-          {region && (
-            <div>
-              <label
-                htmlFor="branch"
-                className="block font-semibold text-sm mt-3"
-              >
-                Branch:
-              </label>
-              <select
-                id="branch"
-                value={branch}
-                onChange={(e) => setBranch(e.target.value)}
-                className="border p-2 w-full rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              >
-                <option value="">Select Branch</option>
-                {branches[region].map((branch, index) => (
-                  <option key={index} value={branch}>
-                    {branch}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
 
           {branch && (
             <div>
@@ -364,4 +330,4 @@ function SalesUpdateGm() {
   );
 }
 
-export default SalesUpdateGm;
+export default SalesUpdateSm;
